@@ -1,0 +1,21 @@
+---
+observed_data:
+  giss: /data/ouce-drift/cenv0857/observed_data/GISS
+  gpcc: /data/ouce-drift/cenv0857/observed_data/GPCC
+  hadcrut4: /data/ouce-drift/cenv0857/observed_data/HadCRUT4
+  hadslp2r: /data/ouce-drift/cenv0857/observed_data/HadSLP2r
+  ncdc: /data/ouce-drift/cenv0857/observed_data/NCDC
+
+ensemble_data:
+  root: /data/ouce-drift/cenv0857/esmvaltool_output
+  cmip5:
+    - recipe_nao_cmip5_autogen_20220125_180021
+  cmip6:
+    - recipe_nao_cmip6_autogen_20220125_192310
+
+aux_data:
+  camels: /data/ouce-drift/cenv0857/8344e4f3-d2ea-44f5-8afa-86d2987543a9
+  ukbn: /data/ouce-drift/cenv0857/UKBN
+  ncar_precip: /data/ouce-drift/cenv0857/ncar_prec_data
+
+output_data: /data/ouce-drift/cenv0857/decadal_flood_prediction_data

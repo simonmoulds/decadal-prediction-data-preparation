@@ -1,0 +1,618 @@
+documentation:
+  title: NAO
+  description: Compute indices for NAO-matching technique
+  authors:
+  - righi_mattia
+
+datasets:
+  - {dataset: CanESM5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1960, ensemble: r(1:20)i1p2f1, grid: gn, mip: Amon, start_year: 1961, end_year: 1969}
+  - {dataset: CanESM5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1961, ensemble: r(1:20)i1p2f1, grid: gn, mip: Amon, start_year: 1962, end_year: 1970}
+  - {dataset: CanESM5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1962, ensemble: r(1:20)i1p2f1, grid: gn, mip: Amon, start_year: 1963, end_year: 1971}
+  - {dataset: CanESM5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1963, ensemble: r(1:20)i1p2f1, grid: gn, mip: Amon, start_year: 1964, end_year: 1972}
+  - {dataset: CanESM5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1964, ensemble: r(1:20)i1p2f1, grid: gn, mip: Amon, start_year: 1965, end_year: 1973}
+  - {dataset: CanESM5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1965, ensemble: r(1:20)i1p2f1, grid: gn, mip: Amon, start_year: 1966, end_year: 1974}
+  - {dataset: CanESM5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1966, ensemble: r(1:20)i1p2f1, grid: gn, mip: Amon, start_year: 1967, end_year: 1975}
+  - {dataset: CanESM5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1967, ensemble: r(1:20)i1p2f1, grid: gn, mip: Amon, start_year: 1968, end_year: 1976}
+  - {dataset: CanESM5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1968, ensemble: r(1:20)i1p2f1, grid: gn, mip: Amon, start_year: 1969, end_year: 1977}
+  - {dataset: CanESM5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1969, ensemble: r(1:20)i1p2f1, grid: gn, mip: Amon, start_year: 1970, end_year: 1978}
+  - {dataset: CanESM5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1970, ensemble: r(1:20)i1p2f1, grid: gn, mip: Amon, start_year: 1971, end_year: 1979}
+  - {dataset: CanESM5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1971, ensemble: r(1:20)i1p2f1, grid: gn, mip: Amon, start_year: 1972, end_year: 1980}
+  - {dataset: CanESM5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1972, ensemble: r(1:20)i1p2f1, grid: gn, mip: Amon, start_year: 1973, end_year: 1981}
+  - {dataset: CanESM5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1973, ensemble: r(1:20)i1p2f1, grid: gn, mip: Amon, start_year: 1974, end_year: 1982}
+  - {dataset: CanESM5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1974, ensemble: r(1:20)i1p2f1, grid: gn, mip: Amon, start_year: 1975, end_year: 1983}
+  - {dataset: CanESM5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1975, ensemble: r(1:20)i1p2f1, grid: gn, mip: Amon, start_year: 1976, end_year: 1984}
+  - {dataset: CanESM5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1976, ensemble: r(1:20)i1p2f1, grid: gn, mip: Amon, start_year: 1977, end_year: 1985}
+  - {dataset: CanESM5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1977, ensemble: r(1:20)i1p2f1, grid: gn, mip: Amon, start_year: 1978, end_year: 1986}
+  - {dataset: CanESM5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1978, ensemble: r(1:20)i1p2f1, grid: gn, mip: Amon, start_year: 1979, end_year: 1987}
+  - {dataset: CanESM5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1979, ensemble: r(1:20)i1p2f1, grid: gn, mip: Amon, start_year: 1980, end_year: 1988}
+  - {dataset: CanESM5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1980, ensemble: r(1:20)i1p2f1, grid: gn, mip: Amon, start_year: 1981, end_year: 1989}
+  - {dataset: CanESM5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1981, ensemble: r(1:20)i1p2f1, grid: gn, mip: Amon, start_year: 1982, end_year: 1990}
+  - {dataset: CanESM5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1982, ensemble: r(1:20)i1p2f1, grid: gn, mip: Amon, start_year: 1983, end_year: 1991}
+  - {dataset: CanESM5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1983, ensemble: r(1:20)i1p2f1, grid: gn, mip: Amon, start_year: 1984, end_year: 1992}
+  - {dataset: CanESM5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1984, ensemble: r(1:20)i1p2f1, grid: gn, mip: Amon, start_year: 1985, end_year: 1993}
+  - {dataset: CanESM5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1985, ensemble: r(1:20)i1p2f1, grid: gn, mip: Amon, start_year: 1986, end_year: 1994}
+  - {dataset: CanESM5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1986, ensemble: r(1:20)i1p2f1, grid: gn, mip: Amon, start_year: 1987, end_year: 1995}
+  - {dataset: CanESM5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1987, ensemble: r(1:20)i1p2f1, grid: gn, mip: Amon, start_year: 1988, end_year: 1996}
+  - {dataset: CanESM5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1988, ensemble: r(1:20)i1p2f1, grid: gn, mip: Amon, start_year: 1989, end_year: 1997}
+  - {dataset: CanESM5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1989, ensemble: r(1:20)i1p2f1, grid: gn, mip: Amon, start_year: 1990, end_year: 1998}
+  - {dataset: CanESM5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1990, ensemble: r(1:20)i1p2f1, grid: gn, mip: Amon, start_year: 1991, end_year: 1999}
+  - {dataset: CanESM5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1991, ensemble: r(1:20)i1p2f1, grid: gn, mip: Amon, start_year: 1992, end_year: 2000}
+  - {dataset: CanESM5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1992, ensemble: r(1:20)i1p2f1, grid: gn, mip: Amon, start_year: 1993, end_year: 2001}
+  - {dataset: CanESM5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1993, ensemble: r(1:20)i1p2f1, grid: gn, mip: Amon, start_year: 1994, end_year: 2002}
+  - {dataset: CanESM5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1994, ensemble: r(1:20)i1p2f1, grid: gn, mip: Amon, start_year: 1995, end_year: 2003}
+  - {dataset: CanESM5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1995, ensemble: r(1:20)i1p2f1, grid: gn, mip: Amon, start_year: 1996, end_year: 2004}
+  - {dataset: CanESM5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1996, ensemble: r(1:20)i1p2f1, grid: gn, mip: Amon, start_year: 1997, end_year: 2005}
+  - {dataset: CanESM5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1997, ensemble: r(1:20)i1p2f1, grid: gn, mip: Amon, start_year: 1998, end_year: 2006}
+  - {dataset: CanESM5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1998, ensemble: r(1:20)i1p2f1, grid: gn, mip: Amon, start_year: 1999, end_year: 2007}
+  - {dataset: CanESM5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1999, ensemble: r(1:20)i1p2f1, grid: gn, mip: Amon, start_year: 2000, end_year: 2008}
+  - {dataset: CanESM5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2000, ensemble: r(1:20)i1p2f1, grid: gn, mip: Amon, start_year: 2001, end_year: 2009}
+  - {dataset: CanESM5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2001, ensemble: r(1:20)i1p2f1, grid: gn, mip: Amon, start_year: 2002, end_year: 2010}
+  - {dataset: CanESM5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2002, ensemble: r(1:20)i1p2f1, grid: gn, mip: Amon, start_year: 2003, end_year: 2011}
+  - {dataset: CanESM5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2003, ensemble: r(1:20)i1p2f1, grid: gn, mip: Amon, start_year: 2004, end_year: 2012}
+  - {dataset: CanESM5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2004, ensemble: r(1:20)i1p2f1, grid: gn, mip: Amon, start_year: 2005, end_year: 2013}
+  - {dataset: CanESM5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2005, ensemble: r(1:20)i1p2f1, grid: gn, mip: Amon, start_year: 2006, end_year: 2014}
+  - {dataset: CanESM5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2006, ensemble: r(1:20)i1p2f1, grid: gn, mip: Amon, start_year: 2007, end_year: 2015}
+  - {dataset: CanESM5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2007, ensemble: r(1:20)i1p2f1, grid: gn, mip: Amon, start_year: 2008, end_year: 2016}
+  - {dataset: CanESM5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2008, ensemble: r(1:20)i1p2f1, grid: gn, mip: Amon, start_year: 2009, end_year: 2017}
+  - {dataset: CanESM5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2009, ensemble: r(1:20)i1p2f1, grid: gn, mip: Amon, start_year: 2010, end_year: 2018}
+  - {dataset: CanESM5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2010, ensemble: r(1:20)i1p2f1, grid: gn, mip: Amon, start_year: 2011, end_year: 2019}
+  - {dataset: EC-Earth3, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1960, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1961, end_year: 1969}
+  - {dataset: EC-Earth3, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1961, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1962, end_year: 1970}
+  - {dataset: EC-Earth3, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1962, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1963, end_year: 1971}
+  - {dataset: EC-Earth3, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1963, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1964, end_year: 1972}
+  - {dataset: EC-Earth3, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1964, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1965, end_year: 1973}
+  - {dataset: EC-Earth3, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1965, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1966, end_year: 1974}
+  - {dataset: EC-Earth3, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1966, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1967, end_year: 1975}
+  - {dataset: EC-Earth3, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1967, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1968, end_year: 1976}
+  - {dataset: EC-Earth3, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1968, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1969, end_year: 1977}
+  - {dataset: EC-Earth3, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1969, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1970, end_year: 1978}
+  - {dataset: EC-Earth3, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1970, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1971, end_year: 1979}
+  - {dataset: EC-Earth3, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1971, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1972, end_year: 1980}
+  - {dataset: EC-Earth3, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1972, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1973, end_year: 1981}
+  - {dataset: EC-Earth3, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1973, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1974, end_year: 1982}
+  - {dataset: EC-Earth3, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1974, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1975, end_year: 1983}
+  - {dataset: EC-Earth3, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1975, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1976, end_year: 1984}
+  - {dataset: EC-Earth3, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1976, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1977, end_year: 1985}
+  - {dataset: EC-Earth3, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1977, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1978, end_year: 1986}
+  - {dataset: EC-Earth3, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1978, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1979, end_year: 1987}
+  - {dataset: EC-Earth3, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1979, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1980, end_year: 1988}
+  - {dataset: EC-Earth3, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1980, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1981, end_year: 1989}
+  - {dataset: EC-Earth3, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1981, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1982, end_year: 1990}
+  - {dataset: EC-Earth3, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1982, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1983, end_year: 1991}
+  - {dataset: EC-Earth3, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1983, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1984, end_year: 1992}
+  - {dataset: EC-Earth3, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1984, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1985, end_year: 1993}
+  - {dataset: EC-Earth3, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1985, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1986, end_year: 1994}
+  - {dataset: EC-Earth3, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1986, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1987, end_year: 1995}
+  - {dataset: EC-Earth3, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1987, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1988, end_year: 1996}
+  - {dataset: EC-Earth3, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1988, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1989, end_year: 1997}
+  - {dataset: EC-Earth3, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1989, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1990, end_year: 1998}
+  - {dataset: EC-Earth3, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1990, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1991, end_year: 1999}
+  - {dataset: EC-Earth3, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1991, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1992, end_year: 2000}
+  - {dataset: EC-Earth3, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1992, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1993, end_year: 2001}
+  - {dataset: EC-Earth3, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1993, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1994, end_year: 2002}
+  - {dataset: EC-Earth3, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1994, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1995, end_year: 2003}
+  - {dataset: EC-Earth3, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1995, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1996, end_year: 2004}
+  - {dataset: EC-Earth3, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1996, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1997, end_year: 2005}
+  - {dataset: EC-Earth3, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1997, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1998, end_year: 2006}
+  - {dataset: EC-Earth3, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1998, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1999, end_year: 2007}
+  - {dataset: EC-Earth3, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1999, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 2000, end_year: 2008}
+  - {dataset: EC-Earth3, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2000, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 2001, end_year: 2009}
+  - {dataset: EC-Earth3, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2001, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 2002, end_year: 2010}
+  - {dataset: EC-Earth3, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2002, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 2003, end_year: 2011}
+  - {dataset: EC-Earth3, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2003, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 2004, end_year: 2012}
+  - {dataset: EC-Earth3, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2004, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 2005, end_year: 2013}
+  - {dataset: EC-Earth3, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2005, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 2006, end_year: 2014}
+  - {dataset: EC-Earth3, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2006, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 2007, end_year: 2015}
+  - {dataset: EC-Earth3, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2007, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 2008, end_year: 2016}
+  - {dataset: EC-Earth3, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2008, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 2009, end_year: 2017}
+  - {dataset: EC-Earth3, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2009, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 2010, end_year: 2018}
+  - {dataset: EC-Earth3, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2010, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 2011, end_year: 2019}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1960, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1961, end_year: 1969}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1961, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1962, end_year: 1970}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1962, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1963, end_year: 1971}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1963, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1964, end_year: 1972}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1964, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1965, end_year: 1973}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1965, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1966, end_year: 1974}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1966, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1967, end_year: 1975}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1967, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1968, end_year: 1976}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1968, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1969, end_year: 1977}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1969, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1970, end_year: 1978}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1970, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1971, end_year: 1979}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1971, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1972, end_year: 1980}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1972, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1973, end_year: 1981}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1973, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1974, end_year: 1982}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1974, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1975, end_year: 1983}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1975, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1976, end_year: 1984}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1976, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1977, end_year: 1985}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1977, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1978, end_year: 1986}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1978, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1979, end_year: 1987}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1979, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1980, end_year: 1988}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1980, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1981, end_year: 1989}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1981, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1982, end_year: 1990}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1982, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1983, end_year: 1991}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1983, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1984, end_year: 1992}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1984, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1985, end_year: 1993}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1985, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1986, end_year: 1994}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1986, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1987, end_year: 1995}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1987, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1988, end_year: 1996}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1988, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1989, end_year: 1997}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1989, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1990, end_year: 1998}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1990, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1991, end_year: 1999}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1991, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1992, end_year: 2000}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1992, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1993, end_year: 2001}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1993, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1994, end_year: 2002}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1994, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1995, end_year: 2003}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1995, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1996, end_year: 2004}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1996, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1997, end_year: 2005}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1997, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1998, end_year: 2006}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1998, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 1999, end_year: 2007}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1999, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 2000, end_year: 2008}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2000, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 2001, end_year: 2009}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2001, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 2002, end_year: 2010}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2002, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 2003, end_year: 2011}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2003, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 2004, end_year: 2012}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2004, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 2005, end_year: 2013}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2005, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 2006, end_year: 2014}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2006, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 2007, end_year: 2015}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2007, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 2008, end_year: 2016}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2008, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 2009, end_year: 2017}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2009, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 2010, end_year: 2018}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2010, ensemble: r(1:10)i1p1f1, grid: gr, mip: Amon, start_year: 2011, end_year: 2019}
+  - {dataset: MIROC6, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1960, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1961, end_year: 1969}
+  - {dataset: MIROC6, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1961, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1962, end_year: 1970}
+  - {dataset: MIROC6, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1962, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1963, end_year: 1971}
+  - {dataset: MIROC6, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1963, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1964, end_year: 1972}
+  - {dataset: MIROC6, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1964, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1965, end_year: 1973}
+  - {dataset: MIROC6, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1965, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1966, end_year: 1974}
+  - {dataset: MIROC6, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1966, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1967, end_year: 1975}
+  - {dataset: MIROC6, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1967, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1968, end_year: 1976}
+  - {dataset: MIROC6, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1968, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1969, end_year: 1977}
+  - {dataset: MIROC6, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1969, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1970, end_year: 1978}
+  - {dataset: MIROC6, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1970, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1971, end_year: 1979}
+  - {dataset: MIROC6, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1971, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1972, end_year: 1980}
+  - {dataset: MIROC6, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1972, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1973, end_year: 1981}
+  - {dataset: MIROC6, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1973, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1974, end_year: 1982}
+  - {dataset: MIROC6, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1974, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1975, end_year: 1983}
+  - {dataset: MIROC6, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1975, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1976, end_year: 1984}
+  - {dataset: MIROC6, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1976, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1977, end_year: 1985}
+  - {dataset: MIROC6, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1977, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1978, end_year: 1986}
+  - {dataset: MIROC6, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1978, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1979, end_year: 1987}
+  - {dataset: MIROC6, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1979, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1980, end_year: 1988}
+  - {dataset: MIROC6, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1980, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1981, end_year: 1989}
+  - {dataset: MIROC6, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1981, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1982, end_year: 1990}
+  - {dataset: MIROC6, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1982, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1983, end_year: 1991}
+  - {dataset: MIROC6, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1983, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1984, end_year: 1992}
+  - {dataset: MIROC6, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1984, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1985, end_year: 1993}
+  - {dataset: MIROC6, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1985, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1986, end_year: 1994}
+  - {dataset: MIROC6, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1986, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1987, end_year: 1995}
+  - {dataset: MIROC6, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1987, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1988, end_year: 1996}
+  - {dataset: MIROC6, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1988, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1989, end_year: 1997}
+  - {dataset: MIROC6, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1989, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1990, end_year: 1998}
+  - {dataset: MIROC6, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1990, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1991, end_year: 1999}
+  - {dataset: MIROC6, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1991, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1992, end_year: 2000}
+  - {dataset: MIROC6, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1992, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1993, end_year: 2001}
+  - {dataset: MIROC6, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1993, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1994, end_year: 2002}
+  - {dataset: MIROC6, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1994, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1995, end_year: 2003}
+  - {dataset: MIROC6, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1995, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1996, end_year: 2004}
+  - {dataset: MIROC6, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1996, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1997, end_year: 2005}
+  - {dataset: MIROC6, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1997, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1998, end_year: 2006}
+  - {dataset: MIROC6, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1998, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1999, end_year: 2007}
+  - {dataset: MIROC6, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1999, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 2000, end_year: 2008}
+  - {dataset: MIROC6, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2000, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 2001, end_year: 2009}
+  - {dataset: MIROC6, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2001, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 2002, end_year: 2010}
+  - {dataset: MIROC6, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2002, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 2003, end_year: 2011}
+  - {dataset: MIROC6, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2003, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 2004, end_year: 2012}
+  - {dataset: MIROC6, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2004, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 2005, end_year: 2013}
+  - {dataset: MIROC6, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2005, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 2006, end_year: 2014}
+  - {dataset: MIROC6, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2006, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 2007, end_year: 2015}
+  - {dataset: MIROC6, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2007, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 2008, end_year: 2016}
+  - {dataset: MIROC6, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2008, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 2009, end_year: 2017}
+  - {dataset: MIROC6, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2009, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 2010, end_year: 2018}
+  - {dataset: MIROC6, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2010, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 2011, end_year: 2019}
+  - {dataset: HadGEM3-GC31-MM, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1960, ensemble: r(1:10)i1p1f2, grid: gn, mip: Amon, start_year: 1961, end_year: 1969}
+  - {dataset: HadGEM3-GC31-MM, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1961, ensemble: r(1:10)i1p1f2, grid: gn, mip: Amon, start_year: 1962, end_year: 1970}
+  - {dataset: HadGEM3-GC31-MM, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1962, ensemble: r(1:10)i1p1f2, grid: gn, mip: Amon, start_year: 1963, end_year: 1971}
+  - {dataset: HadGEM3-GC31-MM, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1963, ensemble: r(1:10)i1p1f2, grid: gn, mip: Amon, start_year: 1964, end_year: 1972}
+  - {dataset: HadGEM3-GC31-MM, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1964, ensemble: r(1:10)i1p1f2, grid: gn, mip: Amon, start_year: 1965, end_year: 1973}
+  - {dataset: HadGEM3-GC31-MM, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1965, ensemble: r(1:10)i1p1f2, grid: gn, mip: Amon, start_year: 1966, end_year: 1974}
+  - {dataset: HadGEM3-GC31-MM, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1966, ensemble: r(1:10)i1p1f2, grid: gn, mip: Amon, start_year: 1967, end_year: 1975}
+  - {dataset: HadGEM3-GC31-MM, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1967, ensemble: r(1:10)i1p1f2, grid: gn, mip: Amon, start_year: 1968, end_year: 1976}
+  - {dataset: HadGEM3-GC31-MM, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1968, ensemble: r(1:10)i1p1f2, grid: gn, mip: Amon, start_year: 1969, end_year: 1977}
+  - {dataset: HadGEM3-GC31-MM, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1969, ensemble: r(1:10)i1p1f2, grid: gn, mip: Amon, start_year: 1970, end_year: 1978}
+  - {dataset: HadGEM3-GC31-MM, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1970, ensemble: r(1:10)i1p1f2, grid: gn, mip: Amon, start_year: 1971, end_year: 1979}
+  - {dataset: HadGEM3-GC31-MM, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1971, ensemble: r(1:10)i1p1f2, grid: gn, mip: Amon, start_year: 1972, end_year: 1980}
+  - {dataset: HadGEM3-GC31-MM, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1972, ensemble: r(1:10)i1p1f2, grid: gn, mip: Amon, start_year: 1973, end_year: 1981}
+  - {dataset: HadGEM3-GC31-MM, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1973, ensemble: r(1:10)i1p1f2, grid: gn, mip: Amon, start_year: 1974, end_year: 1982}
+  - {dataset: HadGEM3-GC31-MM, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1974, ensemble: r(1:10)i1p1f2, grid: gn, mip: Amon, start_year: 1975, end_year: 1983}
+  - {dataset: HadGEM3-GC31-MM, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1975, ensemble: r(1:10)i1p1f2, grid: gn, mip: Amon, start_year: 1976, end_year: 1984}
+  - {dataset: HadGEM3-GC31-MM, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1976, ensemble: r(1:10)i1p1f2, grid: gn, mip: Amon, start_year: 1977, end_year: 1985}
+  - {dataset: HadGEM3-GC31-MM, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1977, ensemble: r(1:10)i1p1f2, grid: gn, mip: Amon, start_year: 1978, end_year: 1986}
+  - {dataset: HadGEM3-GC31-MM, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1978, ensemble: r(1:10)i1p1f2, grid: gn, mip: Amon, start_year: 1979, end_year: 1987}
+  - {dataset: HadGEM3-GC31-MM, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1979, ensemble: r(1:10)i1p1f2, grid: gn, mip: Amon, start_year: 1980, end_year: 1988}
+  - {dataset: HadGEM3-GC31-MM, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1980, ensemble: r(1:10)i1p1f2, grid: gn, mip: Amon, start_year: 1981, end_year: 1989}
+  - {dataset: HadGEM3-GC31-MM, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1981, ensemble: r(1:10)i1p1f2, grid: gn, mip: Amon, start_year: 1982, end_year: 1990}
+  - {dataset: HadGEM3-GC31-MM, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1982, ensemble: r(1:10)i1p1f2, grid: gn, mip: Amon, start_year: 1983, end_year: 1991}
+  - {dataset: HadGEM3-GC31-MM, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1983, ensemble: r(1:10)i1p1f2, grid: gn, mip: Amon, start_year: 1984, end_year: 1992}
+  - {dataset: HadGEM3-GC31-MM, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1984, ensemble: r(1:10)i1p1f2, grid: gn, mip: Amon, start_year: 1985, end_year: 1993}
+  - {dataset: HadGEM3-GC31-MM, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1985, ensemble: r(1:10)i1p1f2, grid: gn, mip: Amon, start_year: 1986, end_year: 1994}
+  - {dataset: HadGEM3-GC31-MM, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1986, ensemble: r(1:10)i1p1f2, grid: gn, mip: Amon, start_year: 1987, end_year: 1995}
+  - {dataset: HadGEM3-GC31-MM, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1987, ensemble: r(1:10)i1p1f2, grid: gn, mip: Amon, start_year: 1988, end_year: 1996}
+  - {dataset: HadGEM3-GC31-MM, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1988, ensemble: r(1:10)i1p1f2, grid: gn, mip: Amon, start_year: 1989, end_year: 1997}
+  - {dataset: HadGEM3-GC31-MM, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1989, ensemble: r(1:10)i1p1f2, grid: gn, mip: Amon, start_year: 1990, end_year: 1998}
+  - {dataset: HadGEM3-GC31-MM, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1990, ensemble: r(1:10)i1p1f2, grid: gn, mip: Amon, start_year: 1991, end_year: 1999}
+  - {dataset: HadGEM3-GC31-MM, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1991, ensemble: r(1:10)i1p1f2, grid: gn, mip: Amon, start_year: 1992, end_year: 2000}
+  - {dataset: HadGEM3-GC31-MM, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1992, ensemble: r(1:10)i1p1f2, grid: gn, mip: Amon, start_year: 1993, end_year: 2001}
+  - {dataset: HadGEM3-GC31-MM, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1993, ensemble: r(1:10)i1p1f2, grid: gn, mip: Amon, start_year: 1994, end_year: 2002}
+  - {dataset: HadGEM3-GC31-MM, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1994, ensemble: r(1:10)i1p1f2, grid: gn, mip: Amon, start_year: 1995, end_year: 2003}
+  - {dataset: HadGEM3-GC31-MM, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1995, ensemble: r(1:10)i1p1f2, grid: gn, mip: Amon, start_year: 1996, end_year: 2004}
+  - {dataset: HadGEM3-GC31-MM, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1996, ensemble: r(1:10)i1p1f2, grid: gn, mip: Amon, start_year: 1997, end_year: 2005}
+  - {dataset: HadGEM3-GC31-MM, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1997, ensemble: r(1:10)i1p1f2, grid: gn, mip: Amon, start_year: 1998, end_year: 2006}
+  - {dataset: HadGEM3-GC31-MM, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1998, ensemble: r(1:10)i1p1f2, grid: gn, mip: Amon, start_year: 1999, end_year: 2007}
+  - {dataset: HadGEM3-GC31-MM, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1999, ensemble: r(1:10)i1p1f2, grid: gn, mip: Amon, start_year: 2000, end_year: 2008}
+  - {dataset: HadGEM3-GC31-MM, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2000, ensemble: r(1:10)i1p1f2, grid: gn, mip: Amon, start_year: 2001, end_year: 2009}
+  - {dataset: HadGEM3-GC31-MM, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2001, ensemble: r(1:10)i1p1f2, grid: gn, mip: Amon, start_year: 2002, end_year: 2010}
+  - {dataset: HadGEM3-GC31-MM, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2002, ensemble: r(1:10)i1p1f2, grid: gn, mip: Amon, start_year: 2003, end_year: 2011}
+  - {dataset: HadGEM3-GC31-MM, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2003, ensemble: r(1:10)i1p1f2, grid: gn, mip: Amon, start_year: 2004, end_year: 2012}
+  - {dataset: HadGEM3-GC31-MM, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2004, ensemble: r(1:10)i1p1f2, grid: gn, mip: Amon, start_year: 2005, end_year: 2013}
+  - {dataset: HadGEM3-GC31-MM, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2005, ensemble: r(1:10)i1p1f2, grid: gn, mip: Amon, start_year: 2006, end_year: 2014}
+  - {dataset: HadGEM3-GC31-MM, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2006, ensemble: r(1:10)i1p1f2, grid: gn, mip: Amon, start_year: 2007, end_year: 2015}
+  - {dataset: HadGEM3-GC31-MM, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2007, ensemble: r(1:10)i1p1f2, grid: gn, mip: Amon, start_year: 2008, end_year: 2016}
+  - {dataset: HadGEM3-GC31-MM, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2008, ensemble: r(1:10)i1p1f2, grid: gn, mip: Amon, start_year: 2009, end_year: 2017}
+  - {dataset: HadGEM3-GC31-MM, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2009, ensemble: r(1:10)i1p1f2, grid: gn, mip: Amon, start_year: 2010, end_year: 2018}
+  - {dataset: HadGEM3-GC31-MM, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2010, ensemble: r(1:10)i1p1f2, grid: gn, mip: Amon, start_year: 2011, end_year: 2019}
+  - {dataset: MPI-ESM1-2-HR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1960, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1961, end_year: 1969}
+  - {dataset: MPI-ESM1-2-HR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1961, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1962, end_year: 1970}
+  - {dataset: MPI-ESM1-2-HR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1962, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1963, end_year: 1971}
+  - {dataset: MPI-ESM1-2-HR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1963, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1964, end_year: 1972}
+  - {dataset: MPI-ESM1-2-HR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1964, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1965, end_year: 1973}
+  - {dataset: MPI-ESM1-2-HR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1965, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1966, end_year: 1974}
+  - {dataset: MPI-ESM1-2-HR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1966, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1967, end_year: 1975}
+  - {dataset: MPI-ESM1-2-HR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1967, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1968, end_year: 1976}
+  - {dataset: MPI-ESM1-2-HR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1968, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1969, end_year: 1977}
+  - {dataset: MPI-ESM1-2-HR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1969, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1970, end_year: 1978}
+  - {dataset: MPI-ESM1-2-HR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1970, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1971, end_year: 1979}
+  - {dataset: MPI-ESM1-2-HR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1971, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1972, end_year: 1980}
+  - {dataset: MPI-ESM1-2-HR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1972, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1973, end_year: 1981}
+  - {dataset: MPI-ESM1-2-HR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1973, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1974, end_year: 1982}
+  - {dataset: MPI-ESM1-2-HR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1974, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1975, end_year: 1983}
+  - {dataset: MPI-ESM1-2-HR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1975, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1976, end_year: 1984}
+  - {dataset: MPI-ESM1-2-HR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1976, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1977, end_year: 1985}
+  - {dataset: MPI-ESM1-2-HR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1977, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1978, end_year: 1986}
+  - {dataset: MPI-ESM1-2-HR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1978, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1979, end_year: 1987}
+  - {dataset: MPI-ESM1-2-HR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1979, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1980, end_year: 1988}
+  - {dataset: MPI-ESM1-2-HR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1980, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1981, end_year: 1989}
+  - {dataset: MPI-ESM1-2-HR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1981, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1982, end_year: 1990}
+  - {dataset: MPI-ESM1-2-HR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1982, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1983, end_year: 1991}
+  - {dataset: MPI-ESM1-2-HR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1983, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1984, end_year: 1992}
+  - {dataset: MPI-ESM1-2-HR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1984, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1985, end_year: 1993}
+  - {dataset: MPI-ESM1-2-HR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1985, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1986, end_year: 1994}
+  - {dataset: MPI-ESM1-2-HR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1986, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1987, end_year: 1995}
+  - {dataset: MPI-ESM1-2-HR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1987, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1988, end_year: 1996}
+  - {dataset: MPI-ESM1-2-HR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1988, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1989, end_year: 1997}
+  - {dataset: MPI-ESM1-2-HR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1989, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1990, end_year: 1998}
+  - {dataset: MPI-ESM1-2-HR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1990, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1991, end_year: 1999}
+  - {dataset: MPI-ESM1-2-HR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1991, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1992, end_year: 2000}
+  - {dataset: MPI-ESM1-2-HR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1992, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1993, end_year: 2001}
+  - {dataset: MPI-ESM1-2-HR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1993, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1994, end_year: 2002}
+  - {dataset: MPI-ESM1-2-HR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1994, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1995, end_year: 2003}
+  - {dataset: MPI-ESM1-2-HR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1995, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1996, end_year: 2004}
+  - {dataset: MPI-ESM1-2-HR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1996, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1997, end_year: 2005}
+  - {dataset: MPI-ESM1-2-HR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1997, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1998, end_year: 2006}
+  - {dataset: MPI-ESM1-2-HR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1998, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 1999, end_year: 2007}
+  - {dataset: MPI-ESM1-2-HR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1999, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 2000, end_year: 2008}
+  - {dataset: MPI-ESM1-2-HR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2000, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 2001, end_year: 2009}
+  - {dataset: MPI-ESM1-2-HR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2001, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 2002, end_year: 2010}
+  - {dataset: MPI-ESM1-2-HR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2002, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 2003, end_year: 2011}
+  - {dataset: MPI-ESM1-2-HR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2003, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 2004, end_year: 2012}
+  - {dataset: MPI-ESM1-2-HR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2004, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 2005, end_year: 2013}
+  - {dataset: MPI-ESM1-2-HR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2005, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 2006, end_year: 2014}
+  - {dataset: MPI-ESM1-2-HR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2006, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 2007, end_year: 2015}
+  - {dataset: MPI-ESM1-2-HR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2007, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 2008, end_year: 2016}
+  - {dataset: MPI-ESM1-2-HR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2008, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 2009, end_year: 2017}
+  - {dataset: MPI-ESM1-2-HR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2009, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 2010, end_year: 2018}
+  - {dataset: MPI-ESM1-2-HR, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2010, ensemble: r(1:10)i1p1f1, grid: gn, mip: Amon, start_year: 2011, end_year: 2019}
+  - {dataset: CESM1-1-CAM5-CMIP5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1960, ensemble: r(1:40)i1p1f1, grid: gn, mip: Amon, start_year: 1961, end_year: 1969}
+  - {dataset: CESM1-1-CAM5-CMIP5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1961, ensemble: r(1:40)i1p1f1, grid: gn, mip: Amon, start_year: 1962, end_year: 1970}
+  - {dataset: CESM1-1-CAM5-CMIP5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1962, ensemble: r(1:40)i1p1f1, grid: gn, mip: Amon, start_year: 1963, end_year: 1971}
+  - {dataset: CESM1-1-CAM5-CMIP5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1963, ensemble: r(1:40)i1p1f1, grid: gn, mip: Amon, start_year: 1964, end_year: 1972}
+  - {dataset: CESM1-1-CAM5-CMIP5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1964, ensemble: r(1:40)i1p1f1, grid: gn, mip: Amon, start_year: 1965, end_year: 1973}
+  - {dataset: CESM1-1-CAM5-CMIP5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1965, ensemble: r(1:40)i1p1f1, grid: gn, mip: Amon, start_year: 1966, end_year: 1974}
+  - {dataset: CESM1-1-CAM5-CMIP5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1966, ensemble: r(1:40)i1p1f1, grid: gn, mip: Amon, start_year: 1967, end_year: 1975}
+  - {dataset: CESM1-1-CAM5-CMIP5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1967, ensemble: r(1:40)i1p1f1, grid: gn, mip: Amon, start_year: 1968, end_year: 1976}
+  - {dataset: CESM1-1-CAM5-CMIP5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1968, ensemble: r(1:40)i1p1f1, grid: gn, mip: Amon, start_year: 1969, end_year: 1977}
+  - {dataset: CESM1-1-CAM5-CMIP5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1969, ensemble: r(1:40)i1p1f1, grid: gn, mip: Amon, start_year: 1970, end_year: 1978}
+  - {dataset: CESM1-1-CAM5-CMIP5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1970, ensemble: r(1:40)i1p1f1, grid: gn, mip: Amon, start_year: 1971, end_year: 1979}
+  - {dataset: CESM1-1-CAM5-CMIP5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1971, ensemble: r(1:40)i1p1f1, grid: gn, mip: Amon, start_year: 1972, end_year: 1980}
+  - {dataset: CESM1-1-CAM5-CMIP5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1972, ensemble: r(1:40)i1p1f1, grid: gn, mip: Amon, start_year: 1973, end_year: 1981}
+  - {dataset: CESM1-1-CAM5-CMIP5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1973, ensemble: r(1:40)i1p1f1, grid: gn, mip: Amon, start_year: 1974, end_year: 1982}
+  - {dataset: CESM1-1-CAM5-CMIP5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1974, ensemble: r(1:40)i1p1f1, grid: gn, mip: Amon, start_year: 1975, end_year: 1983}
+  - {dataset: CESM1-1-CAM5-CMIP5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1975, ensemble: r(1:40)i1p1f1, grid: gn, mip: Amon, start_year: 1976, end_year: 1984}
+  - {dataset: CESM1-1-CAM5-CMIP5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1976, ensemble: r(1:40)i1p1f1, grid: gn, mip: Amon, start_year: 1977, end_year: 1985}
+  - {dataset: CESM1-1-CAM5-CMIP5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1977, ensemble: r(1:40)i1p1f1, grid: gn, mip: Amon, start_year: 1978, end_year: 1986}
+  - {dataset: CESM1-1-CAM5-CMIP5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1978, ensemble: r(1:40)i1p1f1, grid: gn, mip: Amon, start_year: 1979, end_year: 1987}
+  - {dataset: CESM1-1-CAM5-CMIP5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1979, ensemble: r(1:40)i1p1f1, grid: gn, mip: Amon, start_year: 1980, end_year: 1988}
+  - {dataset: CESM1-1-CAM5-CMIP5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1980, ensemble: r(1:40)i1p1f1, grid: gn, mip: Amon, start_year: 1981, end_year: 1989}
+  - {dataset: CESM1-1-CAM5-CMIP5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1981, ensemble: r(1:40)i1p1f1, grid: gn, mip: Amon, start_year: 1982, end_year: 1990}
+  - {dataset: CESM1-1-CAM5-CMIP5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1982, ensemble: r(1:40)i1p1f1, grid: gn, mip: Amon, start_year: 1983, end_year: 1991}
+  - {dataset: CESM1-1-CAM5-CMIP5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1983, ensemble: r(1:40)i1p1f1, grid: gn, mip: Amon, start_year: 1984, end_year: 1992}
+  - {dataset: CESM1-1-CAM5-CMIP5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1984, ensemble: r(1:40)i1p1f1, grid: gn, mip: Amon, start_year: 1985, end_year: 1993}
+  - {dataset: CESM1-1-CAM5-CMIP5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1985, ensemble: r(1:40)i1p1f1, grid: gn, mip: Amon, start_year: 1986, end_year: 1994}
+  - {dataset: CESM1-1-CAM5-CMIP5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1986, ensemble: r(1:40)i1p1f1, grid: gn, mip: Amon, start_year: 1987, end_year: 1995}
+  - {dataset: CESM1-1-CAM5-CMIP5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1987, ensemble: r(1:40)i1p1f1, grid: gn, mip: Amon, start_year: 1988, end_year: 1996}
+  - {dataset: CESM1-1-CAM5-CMIP5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1988, ensemble: r(1:40)i1p1f1, grid: gn, mip: Amon, start_year: 1989, end_year: 1997}
+  - {dataset: CESM1-1-CAM5-CMIP5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1989, ensemble: r(1:40)i1p1f1, grid: gn, mip: Amon, start_year: 1990, end_year: 1998}
+  - {dataset: CESM1-1-CAM5-CMIP5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1990, ensemble: r(1:40)i1p1f1, grid: gn, mip: Amon, start_year: 1991, end_year: 1999}
+  - {dataset: CESM1-1-CAM5-CMIP5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1991, ensemble: r(1:40)i1p1f1, grid: gn, mip: Amon, start_year: 1992, end_year: 2000}
+  - {dataset: CESM1-1-CAM5-CMIP5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1992, ensemble: r(1:40)i1p1f1, grid: gn, mip: Amon, start_year: 1993, end_year: 2001}
+  - {dataset: CESM1-1-CAM5-CMIP5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1993, ensemble: r(1:40)i1p1f1, grid: gn, mip: Amon, start_year: 1994, end_year: 2002}
+  - {dataset: CESM1-1-CAM5-CMIP5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1994, ensemble: r(1:40)i1p1f1, grid: gn, mip: Amon, start_year: 1995, end_year: 2003}
+  - {dataset: CESM1-1-CAM5-CMIP5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1995, ensemble: r(1:40)i1p1f1, grid: gn, mip: Amon, start_year: 1996, end_year: 2004}
+  - {dataset: CESM1-1-CAM5-CMIP5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1996, ensemble: r(1:40)i1p1f1, grid: gn, mip: Amon, start_year: 1997, end_year: 2005}
+  - {dataset: CESM1-1-CAM5-CMIP5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1997, ensemble: r(1:40)i1p1f1, grid: gn, mip: Amon, start_year: 1998, end_year: 2006}
+  - {dataset: CESM1-1-CAM5-CMIP5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1998, ensemble: r(1:40)i1p1f1, grid: gn, mip: Amon, start_year: 1999, end_year: 2007}
+  - {dataset: CESM1-1-CAM5-CMIP5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1999, ensemble: r(1:40)i1p1f1, grid: gn, mip: Amon, start_year: 2000, end_year: 2008}
+  - {dataset: CESM1-1-CAM5-CMIP5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2000, ensemble: r(1:40)i1p1f1, grid: gn, mip: Amon, start_year: 2001, end_year: 2009}
+  - {dataset: CESM1-1-CAM5-CMIP5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2001, ensemble: r(1:40)i1p1f1, grid: gn, mip: Amon, start_year: 2002, end_year: 2010}
+  - {dataset: CESM1-1-CAM5-CMIP5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2002, ensemble: r(1:40)i1p1f1, grid: gn, mip: Amon, start_year: 2003, end_year: 2011}
+  - {dataset: CESM1-1-CAM5-CMIP5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2003, ensemble: r(1:40)i1p1f1, grid: gn, mip: Amon, start_year: 2004, end_year: 2012}
+  - {dataset: CESM1-1-CAM5-CMIP5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2004, ensemble: r(1:40)i1p1f1, grid: gn, mip: Amon, start_year: 2005, end_year: 2013}
+  - {dataset: CESM1-1-CAM5-CMIP5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2005, ensemble: r(1:40)i1p1f1, grid: gn, mip: Amon, start_year: 2006, end_year: 2014}
+  - {dataset: CESM1-1-CAM5-CMIP5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2006, ensemble: r(1:40)i1p1f1, grid: gn, mip: Amon, start_year: 2007, end_year: 2015}
+  - {dataset: CESM1-1-CAM5-CMIP5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2007, ensemble: r(1:40)i1p1f1, grid: gn, mip: Amon, start_year: 2008, end_year: 2016}
+  - {dataset: CESM1-1-CAM5-CMIP5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2008, ensemble: r(1:40)i1p1f1, grid: gn, mip: Amon, start_year: 2009, end_year: 2017}
+  - {dataset: CESM1-1-CAM5-CMIP5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2009, ensemble: r(1:40)i1p1f1, grid: gn, mip: Amon, start_year: 2010, end_year: 2018}
+  - {dataset: CESM1-1-CAM5-CMIP5, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2010, ensemble: r(1:40)i1p1f1, grid: gn, mip: Amon, start_year: 2011, end_year: 2019}
+  - {dataset: NorCPM1, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1960, ensemble: r(1:10)i(1:2)p1f1, grid: gn, mip: Amon, start_year: 1961, end_year: 1969}
+  - {dataset: NorCPM1, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1961, ensemble: r(1:10)i(1:2)p1f1, grid: gn, mip: Amon, start_year: 1962, end_year: 1970}
+  - {dataset: NorCPM1, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1962, ensemble: r(1:10)i(1:2)p1f1, grid: gn, mip: Amon, start_year: 1963, end_year: 1971}
+  - {dataset: NorCPM1, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1963, ensemble: r(1:10)i(1:2)p1f1, grid: gn, mip: Amon, start_year: 1964, end_year: 1972}
+  - {dataset: NorCPM1, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1964, ensemble: r(1:10)i(1:2)p1f1, grid: gn, mip: Amon, start_year: 1965, end_year: 1973}
+  - {dataset: NorCPM1, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1965, ensemble: r(1:10)i(1:2)p1f1, grid: gn, mip: Amon, start_year: 1966, end_year: 1974}
+  - {dataset: NorCPM1, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1966, ensemble: r(1:10)i(1:2)p1f1, grid: gn, mip: Amon, start_year: 1967, end_year: 1975}
+  - {dataset: NorCPM1, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1967, ensemble: r(1:10)i(1:2)p1f1, grid: gn, mip: Amon, start_year: 1968, end_year: 1976}
+  - {dataset: NorCPM1, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1968, ensemble: r(1:10)i(1:2)p1f1, grid: gn, mip: Amon, start_year: 1969, end_year: 1977}
+  - {dataset: NorCPM1, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1969, ensemble: r(1:10)i(1:2)p1f1, grid: gn, mip: Amon, start_year: 1970, end_year: 1978}
+  - {dataset: NorCPM1, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1970, ensemble: r(1:10)i(1:2)p1f1, grid: gn, mip: Amon, start_year: 1971, end_year: 1979}
+  - {dataset: NorCPM1, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1971, ensemble: r(1:10)i(1:2)p1f1, grid: gn, mip: Amon, start_year: 1972, end_year: 1980}
+  - {dataset: NorCPM1, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1972, ensemble: r(1:10)i(1:2)p1f1, grid: gn, mip: Amon, start_year: 1973, end_year: 1981}
+  - {dataset: NorCPM1, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1973, ensemble: r(1:10)i(1:2)p1f1, grid: gn, mip: Amon, start_year: 1974, end_year: 1982}
+  - {dataset: NorCPM1, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1974, ensemble: r(1:10)i(1:2)p1f1, grid: gn, mip: Amon, start_year: 1975, end_year: 1983}
+  - {dataset: NorCPM1, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1975, ensemble: r(1:10)i(1:2)p1f1, grid: gn, mip: Amon, start_year: 1976, end_year: 1984}
+  - {dataset: NorCPM1, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1976, ensemble: r(1:10)i(1:2)p1f1, grid: gn, mip: Amon, start_year: 1977, end_year: 1985}
+  - {dataset: NorCPM1, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1977, ensemble: r(1:10)i(1:2)p1f1, grid: gn, mip: Amon, start_year: 1978, end_year: 1986}
+  - {dataset: NorCPM1, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1978, ensemble: r(1:10)i(1:2)p1f1, grid: gn, mip: Amon, start_year: 1979, end_year: 1987}
+  - {dataset: NorCPM1, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1979, ensemble: r(1:10)i(1:2)p1f1, grid: gn, mip: Amon, start_year: 1980, end_year: 1988}
+  - {dataset: NorCPM1, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1980, ensemble: r(1:10)i(1:2)p1f1, grid: gn, mip: Amon, start_year: 1981, end_year: 1989}
+  - {dataset: NorCPM1, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1981, ensemble: r(1:10)i(1:2)p1f1, grid: gn, mip: Amon, start_year: 1982, end_year: 1990}
+  - {dataset: NorCPM1, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1982, ensemble: r(1:10)i(1:2)p1f1, grid: gn, mip: Amon, start_year: 1983, end_year: 1991}
+  - {dataset: NorCPM1, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1983, ensemble: r(1:10)i(1:2)p1f1, grid: gn, mip: Amon, start_year: 1984, end_year: 1992}
+  - {dataset: NorCPM1, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1984, ensemble: r(1:10)i(1:2)p1f1, grid: gn, mip: Amon, start_year: 1985, end_year: 1993}
+  - {dataset: NorCPM1, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1985, ensemble: r(1:10)i(1:2)p1f1, grid: gn, mip: Amon, start_year: 1986, end_year: 1994}
+  - {dataset: NorCPM1, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1986, ensemble: r(1:10)i(1:2)p1f1, grid: gn, mip: Amon, start_year: 1987, end_year: 1995}
+  - {dataset: NorCPM1, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1987, ensemble: r(1:10)i(1:2)p1f1, grid: gn, mip: Amon, start_year: 1988, end_year: 1996}
+  - {dataset: NorCPM1, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1988, ensemble: r(1:10)i(1:2)p1f1, grid: gn, mip: Amon, start_year: 1989, end_year: 1997}
+  - {dataset: NorCPM1, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1989, ensemble: r(1:10)i(1:2)p1f1, grid: gn, mip: Amon, start_year: 1990, end_year: 1998}
+  - {dataset: NorCPM1, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1990, ensemble: r(1:10)i(1:2)p1f1, grid: gn, mip: Amon, start_year: 1991, end_year: 1999}
+  - {dataset: NorCPM1, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1991, ensemble: r(1:10)i(1:2)p1f1, grid: gn, mip: Amon, start_year: 1992, end_year: 2000}
+  - {dataset: NorCPM1, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1992, ensemble: r(1:10)i(1:2)p1f1, grid: gn, mip: Amon, start_year: 1993, end_year: 2001}
+  - {dataset: NorCPM1, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1993, ensemble: r(1:10)i(1:2)p1f1, grid: gn, mip: Amon, start_year: 1994, end_year: 2002}
+  - {dataset: NorCPM1, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1994, ensemble: r(1:10)i(1:2)p1f1, grid: gn, mip: Amon, start_year: 1995, end_year: 2003}
+  - {dataset: NorCPM1, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1995, ensemble: r(1:10)i(1:2)p1f1, grid: gn, mip: Amon, start_year: 1996, end_year: 2004}
+  - {dataset: NorCPM1, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1996, ensemble: r(1:10)i(1:2)p1f1, grid: gn, mip: Amon, start_year: 1997, end_year: 2005}
+  - {dataset: NorCPM1, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1997, ensemble: r(1:10)i(1:2)p1f1, grid: gn, mip: Amon, start_year: 1998, end_year: 2006}
+  - {dataset: NorCPM1, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1998, ensemble: r(1:10)i(1:2)p1f1, grid: gn, mip: Amon, start_year: 1999, end_year: 2007}
+  - {dataset: NorCPM1, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s1999, ensemble: r(1:10)i(1:2)p1f1, grid: gn, mip: Amon, start_year: 2000, end_year: 2008}
+  - {dataset: NorCPM1, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2000, ensemble: r(1:10)i(1:2)p1f1, grid: gn, mip: Amon, start_year: 2001, end_year: 2009}
+  - {dataset: NorCPM1, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2001, ensemble: r(1:10)i(1:2)p1f1, grid: gn, mip: Amon, start_year: 2002, end_year: 2010}
+  - {dataset: NorCPM1, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2002, ensemble: r(1:10)i(1:2)p1f1, grid: gn, mip: Amon, start_year: 2003, end_year: 2011}
+  - {dataset: NorCPM1, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2003, ensemble: r(1:10)i(1:2)p1f1, grid: gn, mip: Amon, start_year: 2004, end_year: 2012}
+  - {dataset: NorCPM1, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2004, ensemble: r(1:10)i(1:2)p1f1, grid: gn, mip: Amon, start_year: 2005, end_year: 2013}
+  - {dataset: NorCPM1, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2005, ensemble: r(1:10)i(1:2)p1f1, grid: gn, mip: Amon, start_year: 2006, end_year: 2014}
+  - {dataset: NorCPM1, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2006, ensemble: r(1:10)i(1:2)p1f1, grid: gn, mip: Amon, start_year: 2007, end_year: 2015}
+  - {dataset: NorCPM1, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2007, ensemble: r(1:10)i(1:2)p1f1, grid: gn, mip: Amon, start_year: 2008, end_year: 2016}
+  - {dataset: NorCPM1, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2008, ensemble: r(1:10)i(1:2)p1f1, grid: gn, mip: Amon, start_year: 2009, end_year: 2017}
+  - {dataset: NorCPM1, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2009, ensemble: r(1:10)i(1:2)p1f1, grid: gn, mip: Amon, start_year: 2010, end_year: 2018}
+  - {dataset: NorCPM1, project: CMIP6, activity: DCPP, exp: dcppA-hindcast, sub_experiment: s2010, ensemble: r(1:10)i(1:2)p1f1, grid: gn, mip: Amon, start_year: 2011, end_year: 2019}
+
+preprocessors:
+  general:
+    regrid:
+      target_grid:
+        start_longitude: 0
+        end_longitude: 355
+        step_longitude: 5
+        start_latitude: 90
+        end_latitude: -90
+        step_latitude: -5
+      scheme: linear
+    extract_season:
+      season: djfm
+
+diagnostics:
+  nao:
+    title: NAO diagnostic
+    description: Diagnostic to compute the NAO index
+    variables:
+      psl:
+        preprocessor: general
+        mip: Amon
+    scripts:
+      nao:
+        script: /Users/simonmoulds/projects/decadal-flood-prediction/decadal-prediction-data-preparation2/esmvaltool-recipes/diag_scripts/diag_indices.py
+        index: nao
+  ea:
+    title: EA diagnostic
+    description: Diagnostic to compute the EA index
+    variables:
+      psl:
+        preprocessor: general
+        mip: Amon
+    scripts:
+      ea:
+        script: /Users/simonmoulds/projects/decadal-flood-prediction/decadal-prediction-data-preparation2/esmvaltool-recipes/diag_scripts/diag_indices.py
+        index: ea
+  amv:
+    title: AMV diagnostic
+    description: Diagnostic to compute the AMV index
+    variables:
+      tas:
+        preprocessor: general
+        mip: Amon
+    scripts:
+      amv:
+        script: /Users/simonmoulds/projects/decadal-flood-prediction/decadal-prediction-data-preparation2/esmvaltool-recipes/diag_scripts/diag_indices.py
+        index: amv
+  european_precip:
+    title: European precipitation diagnostic
+    description: Diagnostic to compute mean European precipitation
+    variables:
+      pr:
+        preprocessor: general
+        mip: Amon
+    scripts:
+      european_precip:
+        script: /Users/simonmoulds/projects/decadal-flood-prediction/decadal-prediction-data-preparation2/esmvaltool-recipes/diag_scripts/diag_indices.py
+        index: european_precip
+  uk_precip:
+    title: UK precipitation diagnostic
+    description: Diagnostic to compute mean UK precipitation
+    variables:
+      pr:
+        preprocessor: general
+        mip: Amon
+    scripts:
+      uk_precip:
+        script: /Users/simonmoulds/projects/decadal-flood-prediction/decadal-prediction-data-preparation2/esmvaltool-recipes/diag_scripts/diag_indices.py
+        index: uk_precip
+  uk_temp:
+    title: UK temperature diagnostic
+    description: Diagnostic to compute mean UK temperature
+    variables:
+      tas:
+        preprocessor: general
+        mip: Amon
+    scripts:
+      uk_temp:
+        script: /Users/simonmoulds/projects/decadal-flood-prediction/decadal-prediction-data-preparation2/esmvaltool-recipes/diag_scripts/diag_indices.py
+        index: uk_temp
+  nino1:
+    title: Nino 1 diagnostic
+    description: Diagnostic to compute Nino 1 index
+    variables:
+      ts:
+        preprocessor: general
+        mip: Amon
+    scripts:
+      nino1:
+        script: /Users/simonmoulds/projects/decadal-flood-prediction/decadal-prediction-data-preparation2/esmvaltool-recipes/diag_scripts/diag_indices.py
+        index: nino1
+  nino2:
+    title: Nino 2 diagnostic
+    description: Diagnostic to compute Nino 1 index
+    variables:
+      ts:
+        preprocessor: general
+        mip: Amon
+    scripts:
+      nino2:
+        script: /Users/simonmoulds/projects/decadal-flood-prediction/decadal-prediction-data-preparation2/esmvaltool-recipes/diag_scripts/diag_indices.py
+        index: nino2
+  nino12:
+    title: Nino 12 diagnostic
+    description: Diagnostic to compute Nino 12 index
+    variables:
+      ts:
+        preprocessor: general
+        mip: Amon
+    scripts:
+      nino12:
+        script: /Users/simonmoulds/projects/decadal-flood-prediction/decadal-prediction-data-preparation2/esmvaltool-recipes/diag_scripts/diag_indices.py
+        index: nino12
+  nino3:
+    title: Nino 3 diagnostic
+    description: Diagnostic to compute Nino 3 index
+    variables:
+      ts:
+        preprocessor: general
+        mip: Amon
+    scripts:
+      nino3:
+        script: /Users/simonmoulds/projects/decadal-flood-prediction/decadal-prediction-data-preparation2/esmvaltool-recipes/diag_scripts/diag_indices.py
+        index: nino3
+  nino34:
+    title: Nino 34 diagnostic
+    description: Diagnostic to compute Nino 34 index
+    variables:
+      ts:
+        preprocessor: general
+        mip: Amon
+    scripts:
+      nino34:
+        script: /Users/simonmoulds/projects/decadal-flood-prediction/decadal-prediction-data-preparation2/esmvaltool-recipes/diag_scripts/diag_indices.py
+        index: nino34
+  nino4:
+    title: Nino 4 diagnostic
+    description: Diagnostic to compute Nino 4 index
+    variables:
+      ts:
+        preprocessor: general
+        mip: Amon
+    scripts:
+      nino4:
+        script: /Users/simonmoulds/projects/decadal-flood-prediction/decadal-prediction-data-preparation2/esmvaltool-recipes/diag_scripts/diag_indices.py
+        index: nino4
+  iod:
+    title: IOD diagnostic
+    description: Diagnostic to compute Nino 1 index
+    variables:
+      ts:
+        preprocessor: general
+        mip: Amon
+    scripts:
+      iod:
+        script: /Users/simonmoulds/projects/decadal-flood-prediction/decadal-prediction-data-preparation2/esmvaltool-recipes/diag_scripts/diag_indices.py
+        index: iod
+  pdv:
+    title: PDV diagnostic
+    description: Diagnostic to compute PDV index
+    variables:
+      ts:
+        preprocessor: general
+        mip: Amon
+    scripts:
+      pdv:
+        script: /Users/simonmoulds/projects/decadal-flood-prediction/decadal-prediction-data-preparation2/esmvaltool-recipes/diag_scripts/diag_indices.py
+        index: pdv
+  ipo:
+    title: IPO diagnostic
+    description: Diagnostic to IPO index
+    variables:
+      ts:
+        preprocessor: general
+        mip: Amon
+    scripts:
+      ipo:
+        script: /Users/simonmoulds/projects/decadal-flood-prediction/decadal-prediction-data-preparation2/esmvaltool-recipes/diag_scripts/diag_indices.py
+        index: ipo
+  sahel_precip:
+    title: Sahelian precipitation
+    description: Diagnostic to compute area-averaged Sahel precipitation
+    variables:
+      pr:
+        preprocessor: general
+        mip: Amon
+    scripts:
+      sahel_precip:
+        script: /Users/simonmoulds/projects/decadal-flood-prediction/decadal-prediction-data-preparation2/esmvaltool-recipes/diag_scripts/diag_indices.py
+        index: sahel_precip
+  uk_precip_field:
+    title: UK precipitation field
+    description: Diagnostic to compute UK precipitation field
+    variables:
+      pr:
+        preprocessor: general
+        mip: Amon
+    scripts:
+      uk_precip_field:
+        script: /Users/simonmoulds/projects/decadal-flood-prediction/decadal-prediction-data-preparation2/esmvaltool-recipes/diag_scripts/diag_indices.py
+        index: uk_precip_field
