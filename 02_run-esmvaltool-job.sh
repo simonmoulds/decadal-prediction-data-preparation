@@ -16,6 +16,9 @@ module load Anaconda3/2020.11
 module load NCO/5.0.1-foss-2021a
 source activate $DATA/envs/esmvaltool
 
+# PYTHONPATH sometimes causes issues
+export PYTHONPATH=
+
 # esmvaltool run --skip-nonexistent=True --check_level=relaxed --offline=True ~/decadal-flood-prediction/esmvaltool-recipes/recipe_cvdp_cmip5_autogen.yml
 
 # esmvaltool run --skip-nonexistent=True --check_level=relaxed --offline=True ~/decadal-flood-prediction/esmvaltool-recipes/recipe_s20_grid_cmip5_autogen.yml
