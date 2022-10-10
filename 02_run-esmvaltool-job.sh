@@ -10,7 +10,7 @@
 #SBATCH --job-name=esmvaltool
 #SBATCH --time=48:00:00
 
-# cd $SCRATCH || exit 1
+cd $SCRATCH || exit 1
 
 module load Anaconda3/2020.11
 module load NCO/5.0.1-foss-2021a
