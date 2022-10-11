@@ -450,6 +450,28 @@ def get_s20_diagnostic(rootdir):
                         "index": "uk_precip_field"
                     }
                 }
+            },
+            "cr_precip_field": {
+                "title": "Costa Rica precipitation field",
+                "description": "Diagnostic to compute Costa Rica precipitation field",
+                "variables": {"pr": {"preprocessor": "general", "mip": "Amon"}},
+                "scripts": {
+                    "cr_precip_field": {
+                        "script": os.path.join(rootdir, "diag_scripts/diag_indices.py"),
+                        "index": "cr_precip_field"
+                    }
+                }
+            },
+            "cr_temp_field": {
+                "title": "Costa Rica temperature field",
+                "description": "Diagnostic to compute Costa Rica temperature field",
+                "variables": {"tas": {"preprocessor": "general", "mip": "Amon"}},
+                "scripts": {
+                    "cr_temp_field": {
+                        "script": os.path.join(rootdir, "diag_scripts/diag_indices.py"),
+                        "index": "cr_temp_field"
+                    }
+                }
             }
         }
     }

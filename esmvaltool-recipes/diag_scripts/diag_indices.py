@@ -31,6 +31,8 @@ from utils import (
     _extract_ipo_ts,
     _extract_sahel_precip_ts,
     _extract_uk_precip_field,
+    _extract_cr_precip_field,
+    _extract_cr_temp_field,
     _compute_djfm,
     get_provenance_record,
     save_xarray_data,
@@ -77,6 +79,10 @@ def compute_diagnostic(filename, attributes, index):
         x_index = _extract_uk_temp_ts(x)
     elif index == "uk_precip_field":
         x_index = _extract_uk_precip_field(x)
+    elif index == "cr_precip_field":
+        x_index = _extract_cr_precip_field(x)
+    elif index == "cr_temp_field":
+        x_index = _extract_cr_temp_field(x)
     elif index == "psl_field":
         x_index = _compute_djfm(x, filename)
     elif index == "tas_field":

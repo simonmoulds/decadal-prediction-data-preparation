@@ -241,37 +241,37 @@ def _extract_nao_ts(x):
 # NINO indices require SST
 def _extract_nino1_ts(x):
     # Nino 1 - SST anomalies
-    nino1 = _extract_ts(x, -90, -80, -10, -5)
+    nino1 = _extract_ts(x, 270, 280, -10, -5)
     return nino1
 
 
 def _extract_nino2_ts(x):
     # Nino 2 - SST anomalies
-    nino2 = _extract_ts(x, -90, -80, -5, 0)
+    nino2 = _extract_ts(x, 270, 280, -5, 0)
     return nino2
 
 
 def _extract_nino12_ts(x):
     # Nino 1.2 - SST anomalies
-    nino12 = _extract_ts(x, -90, -80, -10, 0)
+    nino12 = _extract_ts(x, 270, 280, -10, 0)
     return nino12
 
 
 def _extract_nino3_ts(x):
     # Nino 3 - SST anomalies
-    nino3 = _extract_ts(x, -150, -90, -5, 5)
+    nino3 = _extract_ts(x, 210, 270, -5, 5)
     return nino3
 
 
 def _extract_nino34_ts(x):
     # Nino 3.4 - SST anomalies
-    nino34 = _extract_ts(x, -170, -120, -5, 5)
+    nino34 = _extract_ts(x, 190, 240, -5, 5)
     return nino34
 
 
 def _extract_nino4_ts(x):
     # Nino 4 - SST anomalies
-    nino4 = _extract_ts(x, 160, -150, -5, 5)
+    nino4 = _extract_ts(x, 160, 210, -5, 5)
     return nino4
 
 
@@ -286,17 +286,17 @@ def _extract_iod_ts(x):
 def _extract_pdv_ts(x):
     # Pacific Decadal Variability [PDV]
     # SST
-    tropical = _extract_ts(x, -160, -110, -10, 6)
-    northern = _extract_ts(x, -180, -145, 30, 45)
+    tropical = _extract_ts(x, 200, 250, -10, 6)
+    northern = _extract_ts(x, 180, 215, 30, 45)
     return tropical - northern
 
 
 def _extract_ipo_ts(x):
     # Interdecadal Pacific Oscillation
     # SST
-    northern = _extract_ts(x, 140, -145, 25, 45)
-    middle = _extract_ts(x, 170, -90, -10, 10)
-    southern = _extract_ts(x, 150, -160, -50, -15)
+    northern = _extract_ts(x, 140, 215, 25, 45)
+    middle = _extract_ts(x, 170, 270, -10, 10)
+    southern = _extract_ts(x, 150, 200, -50, -15)
     ipo = middle - 0.5 * (northern + southern)
     return ipo
 
@@ -355,6 +355,16 @@ def _extract_sahel_precip_ts(x):
 def _extract_uk_precip_field(x):
     uk_precip_field = _extract_field(x, -8, 2, 50, 59)
     return uk_precip_field
+
+
+def _extract_cr_precip_field(x):
+    cr_precip_field = _extract_field(x, -86, -82, 8, 12)
+    return cr_precip_field
+
+
+def _extract_cr_temp_field(x):
+    cr_temp_field = _extract_field(x, -86, -82, 8, 12)
+    return cr_temp_field
 
 
 # NOT USED:
