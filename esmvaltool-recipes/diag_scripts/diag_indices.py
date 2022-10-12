@@ -9,8 +9,8 @@ import xarray
 from esmvaltool.diag_scripts.shared import (
     group_metadata,
     run_diagnostic,
-    get_diagnostic_filename,
-    ProvenanceLogger,
+    # get_diagnostic_filename,
+    # ProvenanceLogger,
 )
 
 from utils import (
@@ -40,6 +40,7 @@ from utils import (
 
 
 logger = logging.getLogger(Path(__file__).stem)
+
 
 def compute_diagnostic(filename, attributes, index):
     logger.debug("Loading %s", filename)
