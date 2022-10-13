@@ -438,7 +438,7 @@ diagnostics:
         mip: Amon
     scripts:
       psl_field:
-        script: /Users/simonmoulds/projects/decadal-flood-prediction/decadal-prediction-data-preparation2/esmvaltool-recipes/diag_scripts/diag_indices.py
+        script: /Users/simonmoulds/projects/decadal-flood-prediction/decadal-prediction-data-preparation/esmvaltool-recipes/diag_scripts/diag_indices.py
         index: psl_field
   tas_field:
     title: Mean temperature
@@ -449,7 +449,7 @@ diagnostics:
         mip: Amon
     scripts:
       tas_field:
-        script: /Users/simonmoulds/projects/decadal-flood-prediction/decadal-prediction-data-preparation2/esmvaltool-recipes/diag_scripts/diag_indices.py
+        script: /Users/simonmoulds/projects/decadal-flood-prediction/decadal-prediction-data-preparation/esmvaltool-recipes/diag_scripts/diag_indices.py
         index: tas_field
   pr_field:
     title: Mean precipitation
@@ -460,5 +460,5 @@ diagnostics:
         mip: Amon
     scripts:
       pr_field:
-        script: /Users/simonmoulds/projects/decadal-flood-prediction/decadal-prediction-data-preparation2/esmvaltool-recipes/diag_scripts/diag_indices.py
+        script: /Users/simonmoulds/projects/decadal-flood-prediction/decadal-prediction-data-preparation/esmvaltool-recipes/diag_scripts/diag_indices.py
         index: pr_field

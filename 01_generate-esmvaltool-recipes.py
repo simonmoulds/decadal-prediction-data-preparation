@@ -20,54 +20,54 @@ CMIP5_MODELS = {
 }
 
 CMIP6_MODELS = {
-    # "CanESM5": {
-    #     "ensemble": "r(1:20)i1p2f1",
-    #     "grid": "gn",
-    #     "start_year": 1960,
-    #     "end_year": 2010,
-    # },
-    # "EC-Earth3": {
-    #     "ensemble": "r(1:10)i1p1f1",
-    #     "grid": "gr",
-    #     "start_year": 1960,
-    #     "end_year": 2010,
-    # },
+    "CanESM5": {
+        "ensemble": "r(1:20)i1p2f1",
+        "grid": "gn",
+        "start_year": 1960,
+        "end_year": 2010,
+    },
+    "EC-Earth3": {
+        "ensemble": "r(1:10)i1p1f1",
+        "grid": "gr",
+        "start_year": 1960,
+        "end_year": 2010,
+    },
     "IPSL-CM6A-LR": {
         "ensemble": "r(1:10)i1p1f1",
         "grid": "gr",
         "start_year": 1960,
         "end_year": 2010,
-    }#,
-    # "MIROC6": {
-    #     "ensemble": "r(1:10)i1p1f1",
-    #     "grid": "gn",
-    #     "start_year": 1960,
-    #     "end_year": 2010,
-    # },
-    # "HadGEM3-GC31-MM": {
-    #     "ensemble": "r(1:10)i1p1f2",
-    #     "grid": "gn",
-    #     "start_year": 1960,
-    #     "end_year": 2010,
-    # },
-    # "MPI-ESM1-2-HR": {
-    #     "ensemble": "r(1:10)i1p1f1",
-    #     "grid": "gn",
-    #     "start_year": 1960,
-    #     "end_year": 2010,
-    # },
-    # "CESM1-1-CAM5-CMIP5": {
-    #     "ensemble": "r(1:40)i1p1f1",
-    #     "grid": "gn",
-    #     "start_year": 1960,
-    #     "end_year": 2010,
-    # },
-    # "NorCPM1": {
-    #     "ensemble": "r(1:10)i(1:2)p1f1",
-    #     "grid": "gn",
-    #     "start_year": 1960,
-    #     "end_year": 2010,
-    # },
+    },
+    "MIROC6": {
+        "ensemble": "r(1:10)i1p1f1",
+        "grid": "gn",
+        "start_year": 1960,
+        "end_year": 2010,
+    },
+    "HadGEM3-GC31-MM": {
+        "ensemble": "r(1:10)i1p1f2",
+        "grid": "gn",
+        "start_year": 1960,
+        "end_year": 2010,
+    },
+    "MPI-ESM1-2-HR": {
+        "ensemble": "r(1:10)i1p1f1",
+        "grid": "gn",
+        "start_year": 1960,
+        "end_year": 2010,
+    },
+    "CESM1-1-CAM5-CMIP5": {
+        "ensemble": "r(1:40)i1p1f1",
+        "grid": "gn",
+        "start_year": 1960,
+        "end_year": 2010,
+    },
+    "NorCPM1": {
+        "ensemble": "r(1:10)i(1:2)p1f1",
+        "grid": "gn",
+        "start_year": 1960,
+        "end_year": 2010,
+    },
 }
 
 

@@ -4,9 +4,8 @@
 #SBATCH -e slurm-%j.out
 #SBATCH --mail-type=END,FAIL
 #SBATCH --mail-user=simon.moulds@ouce.ox.ac.uk
-#SBATCH --nodes=2
+#SBATCH --nodes=1
 #SBATCH --ntasks-per-node=48
-#SBATCH --mem-per-cpu=4G
 #SBATCH --job-name=esmvaltool
 #SBATCH --time=48:00:00
 
