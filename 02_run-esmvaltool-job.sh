@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --partition=medium
+#SBATCH --partition=short
 #SBATCH -o slurm-%j.out
 #SBATCH -e slurm-%j.out
 #SBATCH --mail-type=END,FAIL
@@ -7,7 +7,7 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=48
 #SBATCH --job-name=esmvaltool
-#SBATCH --time=48:00:00
+#SBATCH --time=12:00:00
 
 cd $SCRATCH || exit 1
 
