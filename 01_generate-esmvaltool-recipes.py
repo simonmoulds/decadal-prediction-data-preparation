@@ -20,18 +20,18 @@ CMIP5_MODELS = {
 }
 
 CMIP6_MODELS = {
-    # "CanESM5": {
-    #     "ensemble": "r(1:20)i1p2f1",
-    #     "grid": "gn",
-    #     "start_year": 1960,
-    #     "end_year": 2010,
-    # },
-    "EC-Earth3": {
-        "ensemble": "r(1:10)i1p1f1",
-        "grid": "gr",
+    "CanESM5": {
+        "ensemble": "r(1:20)i1p2f1",
+        "grid": "gn",
         "start_year": 1960,
         "end_year": 2010,
     }#,
+    # "EC-Earth3": {
+    #     "ensemble": "r(1:10)i1p1f1",
+    #     "grid": "gr",
+    #     "start_year": 1960,
+    #     "end_year": 2010,
+    # },
     # "IPSL-CM6A-LR": {
     #     "ensemble": "r(1:10)i1p1f1",
     #     "grid": "gr",
