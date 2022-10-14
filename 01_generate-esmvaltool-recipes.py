@@ -25,55 +25,63 @@ CMIP6_MODELS = {
         "grid": "gn",
         "start_year": 1960,
         "end_year": 2010,
-    }#,
-    # "EC-Earth3": {
-    #     "ensemble": "r(1:10)i1p1f1",
-    #     "grid": "gr",
-    #     "start_year": 1960,
-    #     "end_year": 2010,
-    # },
-    # "IPSL-CM6A-LR": {
-    #     "ensemble": "r(1:10)i1p1f1",
-    #     "grid": "gr",
-    #     "start_year": 1960,
-    #     "end_year": 2010,
-    # },
-    # "MIROC6": {
-    #     "ensemble": "r(1:10)i1p1f1",
-    #     "grid": "gn",
-    #     "start_year": 1960,
-    #     "end_year": 2010,
-    # },
-    # "HadGEM3-GC31-MM": {
-    #     "ensemble": "r(1:10)i1p1f2",
-    #     "grid": "gn",
-    #     "start_year": 1960,
-    #     "end_year": 2010,
-    # },
-    # "MPI-ESM1-2-HR": {
-    #     "ensemble": "r(1:10)i1p1f1",
-    #     "grid": "gn",
-    #     "start_year": 1960,
-    #     "end_year": 2010,
-    # },
-    # "CESM1-1-CAM5-CMIP5": {
-    #     "ensemble": "r(1:40)i1p1f1",
-    #     "grid": "gn",
-    #     "start_year": 1960,
-    #     "end_year": 2010,
-    # },
-    # "NorCPM1": {
-    #     "ensemble": "r(1:10)i(1:2)p1f1",
-    #     "grid": "gn",
-    #     "start_year": 1960,
-    #     "end_year": 2010,
-    # },
+    },
+    "EC-Earth3": {
+        "ensemble": "r(1:10)i1p1f1",
+        "grid": "gr",
+        "start_year": 1960,
+        "end_year": 2010,
+    },
+    "IPSL-CM6A-LR": {
+        "ensemble": "r(1:10)i1p1f1",
+        "grid": "gr",
+        "start_year": 1960,
+        "end_year": 2010,
+    },
+    "MIROC6": {
+        "ensemble": "r(1:10)i1p1f1",
+        "grid": "gn",
+        "start_year": 1960,
+        "end_year": 2010,
+    },
+    "HadGEM3-GC31-MM": {
+        "ensemble": "r(1:10)i1p1f2",
+        "grid": "gn",
+        "start_year": 1960,
+        "end_year": 2010,
+    },
+    "MPI-ESM1-2-HR": {
+        "ensemble": "r(1:10)i1p1f1",
+        "grid": "gn",
+        "start_year": 1960,
+        "end_year": 2010,
+    },
+    "CESM1-1-CAM5-CMIP5": {
+        "ensemble": "r(1:40)i1p1f1",
+        "grid": "gn",
+        "start_year": 1960,
+        "end_year": 2010,
+    },
+    "NorCPM1": {
+        "ensemble": "r(1:10)i(1:2)p1f1",
+        "grid": "gn",
+        "start_year": 1960,
+        "end_year": 2010,
+    },
 }
 
 
-def get_cmip5_datasets():
+def get_cmip5_datasets(model=None):
+    if model is not None:
+        if model in CMIP5_MODELS.keys():
+            models = {model: CMIP5_MODELS[model]}
+        else:
+            raise ValueError
+    else:
+        models = CMIP5_MODELS
+
     cmip5_datasets = []
-    for model, meta in CMIP5_MODELS.items():
+    for model, meta in models.items():
         for yr in range(meta["start_year"], meta["end_year"] + 1):
             start_year = str(yr + 1)
             if model == "GFDL-CM2p1":
@@ -104,9 +112,17 @@ def get_cmip5_datasets():
     return cmip5_datasets
 
 
-def get_cmip6_datasets():
+def get_cmip6_datasets(model=None):
+    if model is not None:
+        if model in CMIP6_MODELS.keys():
+            models = {model: CMIP6_MODELS[model]}
+        else:
+            raise ValueError
+    else:
+        models = CMIP6_MODELS
+
     cmip6_datasets = []
-    for model, meta in CMIP6_MODELS.items():
+    for model, meta in models.items():
         for yr in range(meta["start_year"], meta["end_year"] + 1):
             start_year = str(yr + 1)
             end_year = str(yr + 9)
@@ -535,48 +551,78 @@ def gen_s20_grid_recipe():
         )
 
 
+# def gen_s20_recipe():
+#     documentation_dict = get_documentation(
+#         "NAO", "Compute indices for NAO-matching technique"
+#     )
+#     cmip5_datasets = get_cmip5_datasets()
+#     cmip6_datasets = get_cmip6_datasets()
+#     preprocessor_dict = get_s20_preprocessor()
+#     datasets = {"CMIP6": cmip6_datasets, "CMIP5": cmip5_datasets}
+#     for project, dataset in datasets.items():
+#         rootdir = get_project_rootdir(project)
+#         diagnostic_dict = get_s20_diagnostic(rootdir)
+#         script_dir = pathlib.Path(__file__).parent.resolve()
+#         recipe_fn = os.path.join(
+#             script_dir,
+#             "esmvaltool-recipes",
+#             "recipe_s20_" + project.lower() + "_autogen.yml",
+#         )
+#         write_recipe(
+#             recipe_fn, documentation_dict, dataset, preprocessor_dict, diagnostic_dict
+#         )
+
+
 def gen_s20_recipe():
     documentation_dict = get_documentation(
         "NAO", "Compute indices for NAO-matching technique"
     )
-    cmip5_datasets = get_cmip5_datasets()
-    cmip6_datasets = get_cmip6_datasets()
+    cmip5_models = list(CMIP5_MODELS.keys())
+    cmip6_models = list(CMIP6_MODELS.keys())
+    models = cmip5_models + cmip6_models
     preprocessor_dict = get_s20_preprocessor()
-    datasets = {"CMIP6": cmip6_datasets, "CMIP5": cmip5_datasets}
-    for project, dataset in datasets.items():
+    # datasets = {"CMIP6": cmip6_models, "CMIP5": cmip5_models}
+    for model in models:
+        if model in cmip5_models:
+            project = 'CMIP5'
+            dataset = get_cmip5_datasets(model=model)
+        elif model in cmip6_models:
+            project = 'CMIP6'
+            dataset = get_cmip6_datasets(model=model)
+
         rootdir = get_project_rootdir(project)
         diagnostic_dict = get_s20_diagnostic(rootdir)
         script_dir = pathlib.Path(__file__).parent.resolve()
         recipe_fn = os.path.join(
             script_dir,
             "esmvaltool-recipes",
-            "recipe_s20_" + project.lower() + "_autogen.yml",
+            "recipe_s20_" + project.lower() + '_' + model.replace('-', '_').lower() + "_autogen.yml",
         )
         write_recipe(
             recipe_fn, documentation_dict, dataset, preprocessor_dict, diagnostic_dict
         )
 
 
-def gen_cvdp_recipe():
-    documentation_dict = get_documentation(
-        "CVDP", "Execute CVDP package in ESMValTool framework"
-    )
-    cmip5_datasets = get_cmip5_datasets()
-    cmip6_datasets = get_cmip6_datasets()
-    preprocessor_dict = get_cvdp_preprocessor()
-    datasets = {"CMIP6": cmip6_datasets, "CMIP5": cmip5_datasets}
-    for project, dataset in datasets.items():
-        # rootdir = get_project_rootdir(project)
-        diagnostic_dict = get_cvdp_diagnostic()
-        script_dir = pathlib.Path(__file__).parent.resolve()
-        recipe_fn = os.path.join(
-            script_dir,
-            "esmvaltool-recipes",
-            "recipe_cvdp_" + project.lower() + "_autogen.yml",
-        )
-        write_recipe(
-            recipe_fn, documentation_dict, dataset, preprocessor_dict, diagnostic_dict
-        )
+# def gen_cvdp_recipe():
+#     documentation_dict = get_documentation(
+#         "CVDP", "Execute CVDP package in ESMValTool framework"
+#     )
+#     cmip5_datasets = get_cmip5_datasets()
+#     cmip6_datasets = get_cmip6_datasets()
+#     preprocessor_dict = get_cvdp_preprocessor()
+#     datasets = {"CMIP6": cmip6_datasets, "CMIP5": cmip5_datasets}
+#     for project, dataset in datasets.items():
+#         # rootdir = get_project_rootdir(project)
+#         diagnostic_dict = get_cvdp_diagnostic()
+#         script_dir = pathlib.Path(__file__).parent.resolve()
+#         recipe_fn = os.path.join(
+#             script_dir,
+#             "esmvaltool-recipes",
+#             "recipe_cvdp_" + project.lower() + "_autogen.yml",
+#         )
+#         write_recipe(
+#             recipe_fn, documentation_dict, dataset, preprocessor_dict, diagnostic_dict
+#         )
 
 
 if __name__ == "__main__":
