@@ -1,13 +1,13 @@
 #!/bin/bash
-#SBATCH --partition=short
+#SBATCH --partition=medium
 #SBATCH -o slurm-%j.out
 #SBATCH -e slurm-%j.out
 #SBATCH --mail-type=END,FAIL
 #SBATCH --mail-user=simon.moulds@ouce.ox.ac.uk
-#SBATCH --nodes=1
+#SBATCH --nodes=2
 #SBATCH --ntasks-per-node=48
 #SBATCH --job-name=esmvaltool
-#SBATCH --time=12:00:00
+#SBATCH --time=24:00:00
 
 cd $SCRATCH || exit 1
 
@@ -45,6 +45,6 @@ esmvaltool run --skip-nonexistent=True --check_level=relaxed --offline=True ~/de
 
 esmvaltool run --skip-nonexistent=True --check_level=relaxed --offline=True ~/decadal-prediction-data-preparation/esmvaltool-recipes/recipe_s20_cmip6_norcpm1_autogen.yml
 
-esmvaltool run --skip-nonexistent=True --check_level=relaxed --offline=True ~/decadal-prediction-data-preparation/esmvaltool-recipes/recipe_s20_grid_cmip6_autogen.yml
+# esmvaltool run --skip-nonexistent=True --check_level=relaxed --offline=True ~/decadal-prediction-data-preparation/esmvaltool-recipes/recipe_s20_grid_cmip6_autogen.yml
 
 rsync -av esmvaltool_output $DATA
