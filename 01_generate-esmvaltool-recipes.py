@@ -552,56 +552,56 @@ def gen_s20_grid_recipe():
         )
 
 
-# def gen_s20_recipe():
-#     documentation_dict = get_documentation(
-#         "NAO", "Compute indices for NAO-matching technique"
-#     )
-#     cmip5_datasets = get_cmip5_datasets()
-#     cmip6_datasets = get_cmip6_datasets()
-#     preprocessor_dict = get_s20_preprocessor()
-#     datasets = {"CMIP6": cmip6_datasets, "CMIP5": cmip5_datasets}
-#     for project, dataset in datasets.items():
-#         rootdir = get_project_rootdir(project)
-#         diagnostic_dict = get_s20_diagnostic(rootdir)
-#         script_dir = pathlib.Path(__file__).parent.resolve()
-#         recipe_fn = os.path.join(
-#             script_dir,
-#             "esmvaltool-recipes",
-#             "recipe_s20_" + project.lower() + "_autogen.yml",
-#         )
-#         write_recipe(
-#             recipe_fn, documentation_dict, dataset, preprocessor_dict, diagnostic_dict
-#         )
-
-
 def gen_s20_recipe():
     documentation_dict = get_documentation(
         "NAO", "Compute indices for NAO-matching technique"
     )
-    cmip5_models = list(CMIP5_MODELS.keys())
-    cmip6_models = list(CMIP6_MODELS.keys())
-    models = cmip5_models + cmip6_models
+    cmip5_datasets = get_cmip5_datasets()
+    cmip6_datasets = get_cmip6_datasets()
     preprocessor_dict = get_s20_preprocessor()
-    # datasets = {"CMIP6": cmip6_models, "CMIP5": cmip5_models}
-    for model in models:
-        if model in cmip5_models:
-            project = 'CMIP5'
-            dataset = get_cmip5_datasets(model=model)
-        elif model in cmip6_models:
-            project = 'CMIP6'
-            dataset = get_cmip6_datasets(model=model)
-
+    datasets = {"CMIP6": cmip6_datasets, "CMIP5": cmip5_datasets}
+    for project, dataset in datasets.items():
         rootdir = get_project_rootdir(project)
         diagnostic_dict = get_s20_diagnostic(rootdir)
         script_dir = pathlib.Path(__file__).parent.resolve()
         recipe_fn = os.path.join(
             script_dir,
             "esmvaltool-recipes",
-            "recipe_s20_" + project.lower() + '_' + model.replace('-', '_').lower() + "_autogen.yml",
+            "recipe_s20_" + project.lower() + "_autogen.yml",
         )
         write_recipe(
             recipe_fn, documentation_dict, dataset, preprocessor_dict, diagnostic_dict
         )
+
+
+# def gen_s20_recipe():
+#     documentation_dict = get_documentation(
+#         "NAO", "Compute indices for NAO-matching technique"
+#     )
+#     cmip5_models = list(CMIP5_MODELS.keys())
+#     cmip6_models = list(CMIP6_MODELS.keys())
+#     models = cmip5_models + cmip6_models
+#     preprocessor_dict = get_s20_preprocessor()
+#     # datasets = {"CMIP6": cmip6_models, "CMIP5": cmip5_models}
+#     for model in models:
+#         if model in cmip5_models:
+#             project = 'CMIP5'
+#             dataset = get_cmip5_datasets(model=model)
+#         elif model in cmip6_models:
+#             project = 'CMIP6'
+#             dataset = get_cmip6_datasets(model=model)
+
+#         rootdir = get_project_rootdir(project)
+#         diagnostic_dict = get_s20_diagnostic(rootdir)
+#         script_dir = pathlib.Path(__file__).parent.resolve()
+#         recipe_fn = os.path.join(
+#             script_dir,
+#             "esmvaltool-recipes",
+#             "recipe_s20_" + project.lower() + '_' + model.replace('-', '_').lower() + "_autogen.yml",
+#         )
+#         write_recipe(
+#             recipe_fn, documentation_dict, dataset, preprocessor_dict, diagnostic_dict
+#         )
 
 
 # def gen_cvdp_recipe():
