@@ -69,7 +69,7 @@ preprocessors:
         step_latitude: -5
       scheme: linear
     extract_season:
-      season: djfm
+      season: sondjfm
 
 diagnostics:
   nao:
@@ -138,116 +138,6 @@ diagnostics:
       uk_temp:
         script: /Users/simonmoulds/projects/decadal-flood-prediction/decadal-prediction-data-preparation/esmvaltool-recipes/diag_scripts/diag_indices.py
         index: uk_temp
-  nino1:
-    title: Nino 1 diagnostic
-    description: Diagnostic to compute Nino 1 index
-    variables:
-      ts:
-        preprocessor: general
-        mip: Amon
-    scripts:
-      nino1:
-        script: /Users/simonmoulds/projects/decadal-flood-prediction/decadal-prediction-data-preparation/esmvaltool-recipes/diag_scripts/diag_indices.py
-        index: nino1
-  nino2:
-    title: Nino 2 diagnostic
-    description: Diagnostic to compute Nino 1 index
-    variables:
-      ts:
-        preprocessor: general
-        mip: Amon
-    scripts:
-      nino2:
-        script: /Users/simonmoulds/projects/decadal-flood-prediction/decadal-prediction-data-preparation/esmvaltool-recipes/diag_scripts/diag_indices.py
-        index: nino2
-  nino12:
-    title: Nino 12 diagnostic
-    description: Diagnostic to compute Nino 12 index
-    variables:
-      ts:
-        preprocessor: general
-        mip: Amon
-    scripts:
-      nino12:
-        script: /Users/simonmoulds/projects/decadal-flood-prediction/decadal-prediction-data-preparation/esmvaltool-recipes/diag_scripts/diag_indices.py
-        index: nino12
-  nino3:
-    title: Nino 3 diagnostic
-    description: Diagnostic to compute Nino 3 index
-    variables:
-      ts:
-        preprocessor: general
-        mip: Amon
-    scripts:
-      nino3:
-        script: /Users/simonmoulds/projects/decadal-flood-prediction/decadal-prediction-data-preparation/esmvaltool-recipes/diag_scripts/diag_indices.py
-        index: nino3
-  nino34:
-    title: Nino 34 diagnostic
-    description: Diagnostic to compute Nino 34 index
-    variables:
-      ts:
-        preprocessor: general
-        mip: Amon
-    scripts:
-      nino34:
-        script: /Users/simonmoulds/projects/decadal-flood-prediction/decadal-prediction-data-preparation/esmvaltool-recipes/diag_scripts/diag_indices.py
-        index: nino34
-  nino4:
-    title: Nino 4 diagnostic
-    description: Diagnostic to compute Nino 4 index
-    variables:
-      ts:
-        preprocessor: general
-        mip: Amon
-    scripts:
-      nino4:
-        script: /Users/simonmoulds/projects/decadal-flood-prediction/decadal-prediction-data-preparation/esmvaltool-recipes/diag_scripts/diag_indices.py
-        index: nino4
-  iod:
-    title: IOD diagnostic
-    description: Diagnostic to compute Nino 1 index
-    variables:
-      ts:
-        preprocessor: general
-        mip: Amon
-    scripts:
-      iod:
-        script: /Users/simonmoulds/projects/decadal-flood-prediction/decadal-prediction-data-preparation/esmvaltool-recipes/diag_scripts/diag_indices.py
-        index: iod
-  pdv:
-    title: PDV diagnostic
-    description: Diagnostic to compute PDV index
-    variables:
-      ts:
-        preprocessor: general
-        mip: Amon
-    scripts:
-      pdv:
-        script: /Users/simonmoulds/projects/decadal-flood-prediction/decadal-prediction-data-preparation/esmvaltool-recipes/diag_scripts/diag_indices.py
-        index: pdv
-  ipo:
-    title: IPO diagnostic
-    description: Diagnostic to IPO index
-    variables:
-      ts:
-        preprocessor: general
-        mip: Amon
-    scripts:
-      ipo:
-        script: /Users/simonmoulds/projects/decadal-flood-prediction/decadal-prediction-data-preparation/esmvaltool-recipes/diag_scripts/diag_indices.py
-        index: ipo
-  sahel_precip:
-    title: Sahelian precipitation
-    description: Diagnostic to compute area-averaged Sahel precipitation
-    variables:
-      pr:
-        preprocessor: general
-        mip: Amon
-    scripts:
-      sahel_precip:
-        script: /Users/simonmoulds/projects/decadal-flood-prediction/decadal-prediction-data-preparation/esmvaltool-recipes/diag_scripts/diag_indices.py
-        index: sahel_precip
   uk_precip_field:
     title: UK precipitation field
     description: Diagnostic to compute UK precipitation field
@@ -259,25 +149,3 @@ diagnostics:
       uk_precip_field:
         script: /Users/simonmoulds/projects/decadal-flood-prediction/decadal-prediction-data-preparation/esmvaltool-recipes/diag_scripts/diag_indices.py
         index: uk_precip_field
-  cr_precip_field:
-    title: Costa Rica precipitation field
-    description: Diagnostic to compute Costa Rica precipitation field
-    variables:
-      pr:
-        preprocessor: general
-        mip: Amon
-    scripts:
-      cr_precip_field:
-        script: /Users/simonmoulds/projects/decadal-flood-prediction/decadal-prediction-data-preparation/esmvaltool-recipes/diag_scripts/diag_indices.py
-        index: cr_precip_field
-  cr_temp_field:
-    title: Costa Rica temperature field
-    description: Diagnostic to compute Costa Rica temperature field
-    variables:
-      tas:
-        preprocessor: general
-        mip: Amon
-    scripts:
-      cr_temp_field:
-        script: /Users/simonmoulds/projects/decadal-flood-prediction/decadal-prediction-data-preparation/esmvaltool-recipes/diag_scripts/diag_indices.py
-        index: cr_temp_field

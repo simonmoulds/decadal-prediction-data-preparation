@@ -185,7 +185,8 @@ def get_s20_preprocessor():
                     },
                     "scheme": "linear",
                 },
-                "extract_season": {"season": "djfm"},
+                # "extract_season": {"season": "djfm"},
+                "extract_season": {"season": "sondjfm"},
             }
         }
     }
@@ -346,116 +347,116 @@ def get_s20_diagnostic(rootdir):
                     }
                 },
             },
-            "nino1": {
-                "title": "Nino 1 diagnostic",
-                "description": "Diagnostic to compute Nino 1 index",
-                "variables": {"ts": {"preprocessor": "general", "mip": "Amon"}},
-                "scripts": {
-                    "nino1": {
-                        "script": os.path.join(rootdir, "diag_scripts/diag_indices.py"),
-                        "index": "nino1"
-                    }
-                }
-            },
-            "nino2": {
-                "title": "Nino 2 diagnostic",
-                "description": "Diagnostic to compute Nino 1 index",
-                "variables": {"ts": {"preprocessor": "general", "mip": "Amon"}},
-                "scripts": {
-                    "nino2": {
-                        "script": os.path.join(rootdir, "diag_scripts/diag_indices.py"),
-                        "index": "nino2"
-                    }
-                }
-            },
-            "nino12": {
-                "title": "Nino 12 diagnostic",
-                "description": "Diagnostic to compute Nino 12 index",
-                "variables": {"ts": {"preprocessor": "general", "mip": "Amon"}},
-                "scripts": {
-                    "nino12": {
-                        "script": os.path.join(rootdir, "diag_scripts/diag_indices.py"),
-                        "index": "nino12"
-                    }
-                }
-            },
-            "nino3": {
-                "title": "Nino 3 diagnostic",
-                "description": "Diagnostic to compute Nino 3 index",
-                "variables": {"ts": {"preprocessor": "general", "mip": "Amon"}},
-                "scripts": {
-                    "nino3": {
-                        "script": os.path.join(rootdir, "diag_scripts/diag_indices.py"),
-                        "index": "nino3"
-                    }
-                }
-            },
-            "nino34": {
-                "title": "Nino 34 diagnostic",
-                "description": "Diagnostic to compute Nino 34 index",
-                "variables": {"ts": {"preprocessor": "general", "mip": "Amon"}},
-                "scripts": {
-                    "nino34": {
-                        "script": os.path.join(rootdir, "diag_scripts/diag_indices.py"),
-                        "index": "nino34"
-                    }
-                }
-            },
-            "nino4": {
-                "title": "Nino 4 diagnostic",
-                "description": "Diagnostic to compute Nino 4 index",
-                "variables": {"ts": {"preprocessor": "general", "mip": "Amon"}},
-                "scripts": {
-                    "nino4": {
-                        "script": os.path.join(rootdir, "diag_scripts/diag_indices.py"),
-                        "index": "nino4"
-                    }
-                }
-            },
-            "iod": {
-                "title": "IOD diagnostic",
-                "description": "Diagnostic to compute Nino 1 index",
-                "variables": {"ts": {"preprocessor": "general", "mip": "Amon"}},
-                "scripts": {
-                    "iod": {
-                        "script": os.path.join(rootdir, "diag_scripts/diag_indices.py"),
-                        "index": "iod"
-                    }
-                }
-            },
-            "pdv": {
-                "title": "PDV diagnostic",
-                "description": "Diagnostic to compute PDV index",
-                "variables": {"ts": {"preprocessor": "general", "mip": "Amon"}},
-                "scripts": {
-                    "pdv": {
-                        "script": os.path.join(rootdir, "diag_scripts/diag_indices.py"),
-                        "index": "pdv"
-                    }
-                }
-            },
-            "ipo": {
-                "title": "IPO diagnostic",
-                "description": "Diagnostic to IPO index",
-                "variables": {"ts": {"preprocessor": "general", "mip": "Amon"}},
-                "scripts": {
-                    "ipo": {
-                        "script": os.path.join(rootdir, "diag_scripts/diag_indices.py"),
-                        "index": "ipo"
-                    }
-                }
-            },
-            "sahel_precip": {
-                "title": "Sahelian precipitation",
-                "description": "Diagnostic to compute area-averaged Sahel precipitation",
-                "variables": {"pr": {"preprocessor": "general", "mip": "Amon"}},
-                "scripts": {
-                    "sahel_precip": {
-                        "script": os.path.join(rootdir, "diag_scripts/diag_indices.py"),
-                        "index": "sahel_precip"
-                    }
-                }
-            },
+            # "nino1": {
+            #     "title": "Nino 1 diagnostic",
+            #     "description": "Diagnostic to compute Nino 1 index",
+            #     "variables": {"ts": {"preprocessor": "general", "mip": "Amon"}},
+            #     "scripts": {
+            #         "nino1": {
+            #             "script": os.path.join(rootdir, "diag_scripts/diag_indices.py"),
+            #             "index": "nino1"
+            #         }
+            #     }
+            # },
+            # "nino2": {
+            #     "title": "Nino 2 diagnostic",
+            #     "description": "Diagnostic to compute Nino 1 index",
+            #     "variables": {"ts": {"preprocessor": "general", "mip": "Amon"}},
+            #     "scripts": {
+            #         "nino2": {
+            #             "script": os.path.join(rootdir, "diag_scripts/diag_indices.py"),
+            #             "index": "nino2"
+            #         }
+            #     }
+            # },
+            # "nino12": {
+            #     "title": "Nino 12 diagnostic",
+            #     "description": "Diagnostic to compute Nino 12 index",
+            #     "variables": {"ts": {"preprocessor": "general", "mip": "Amon"}},
+            #     "scripts": {
+            #         "nino12": {
+            #             "script": os.path.join(rootdir, "diag_scripts/diag_indices.py"),
+            #             "index": "nino12"
+            #         }
+            #     }
+            # },
+            # "nino3": {
+            #     "title": "Nino 3 diagnostic",
+            #     "description": "Diagnostic to compute Nino 3 index",
+            #     "variables": {"ts": {"preprocessor": "general", "mip": "Amon"}},
+            #     "scripts": {
+            #         "nino3": {
+            #             "script": os.path.join(rootdir, "diag_scripts/diag_indices.py"),
+            #             "index": "nino3"
+            #         }
+            #     }
+            # },
+            # "nino34": {
+            #     "title": "Nino 34 diagnostic",
+            #     "description": "Diagnostic to compute Nino 34 index",
+            #     "variables": {"ts": {"preprocessor": "general", "mip": "Amon"}},
+            #     "scripts": {
+            #         "nino34": {
+            #             "script": os.path.join(rootdir, "diag_scripts/diag_indices.py"),
+            #             "index": "nino34"
+            #         }
+            #     }
+            # },
+            # "nino4": {
+            #     "title": "Nino 4 diagnostic",
+            #     "description": "Diagnostic to compute Nino 4 index",
+            #     "variables": {"ts": {"preprocessor": "general", "mip": "Amon"}},
+            #     "scripts": {
+            #         "nino4": {
+            #             "script": os.path.join(rootdir, "diag_scripts/diag_indices.py"),
+            #             "index": "nino4"
+            #         }
+            #     }
+            # },
+            # "iod": {
+            #     "title": "IOD diagnostic",
+            #     "description": "Diagnostic to compute Nino 1 index",
+            #     "variables": {"ts": {"preprocessor": "general", "mip": "Amon"}},
+            #     "scripts": {
+            #         "iod": {
+            #             "script": os.path.join(rootdir, "diag_scripts/diag_indices.py"),
+            #             "index": "iod"
+            #         }
+            #     }
+            # },
+            # "pdv": {
+            #     "title": "PDV diagnostic",
+            #     "description": "Diagnostic to compute PDV index",
+            #     "variables": {"ts": {"preprocessor": "general", "mip": "Amon"}},
+            #     "scripts": {
+            #         "pdv": {
+            #             "script": os.path.join(rootdir, "diag_scripts/diag_indices.py"),
+            #             "index": "pdv"
+            #         }
+            #     }
+            # },
+            # "ipo": {
+            #     "title": "IPO diagnostic",
+            #     "description": "Diagnostic to IPO index",
+            #     "variables": {"ts": {"preprocessor": "general", "mip": "Amon"}},
+            #     "scripts": {
+            #         "ipo": {
+            #             "script": os.path.join(rootdir, "diag_scripts/diag_indices.py"),
+            #             "index": "ipo"
+            #         }
+            #     }
+            # },
+            # "sahel_precip": {
+            #     "title": "Sahelian precipitation",
+            #     "description": "Diagnostic to compute area-averaged Sahel precipitation",
+            #     "variables": {"pr": {"preprocessor": "general", "mip": "Amon"}},
+            #     "scripts": {
+            #         "sahel_precip": {
+            #             "script": os.path.join(rootdir, "diag_scripts/diag_indices.py"),
+            #             "index": "sahel_precip"
+            #         }
+            #     }
+            # },
             "uk_precip_field": {
                 "title": "UK precipitation field",
                 "description": "Diagnostic to compute UK precipitation field",
@@ -466,29 +467,29 @@ def get_s20_diagnostic(rootdir):
                         "index": "uk_precip_field"
                     }
                 }
-            },
-            "cr_precip_field": {
-                "title": "Costa Rica precipitation field",
-                "description": "Diagnostic to compute Costa Rica precipitation field",
-                "variables": {"pr": {"preprocessor": "general", "mip": "Amon"}},
-                "scripts": {
-                    "cr_precip_field": {
-                        "script": os.path.join(rootdir, "diag_scripts/diag_indices.py"),
-                        "index": "cr_precip_field"
-                    }
-                }
-            },
-            "cr_temp_field": {
-                "title": "Costa Rica temperature field",
-                "description": "Diagnostic to compute Costa Rica temperature field",
-                "variables": {"tas": {"preprocessor": "general", "mip": "Amon"}},
-                "scripts": {
-                    "cr_temp_field": {
-                        "script": os.path.join(rootdir, "diag_scripts/diag_indices.py"),
-                        "index": "cr_temp_field"
-                    }
-                }
-            }
+            }#,
+            # "cr_precip_field": {
+            #     "title": "Costa Rica precipitation field",
+            #     "description": "Diagnostic to compute Costa Rica precipitation field",
+            #     "variables": {"pr": {"preprocessor": "general", "mip": "Amon"}},
+            #     "scripts": {
+            #         "cr_precip_field": {
+            #             "script": os.path.join(rootdir, "diag_scripts/diag_indices.py"),
+            #             "index": "cr_precip_field"
+            #         }
+            #     }
+            # },
+            # "cr_temp_field": {
+            #     "title": "Costa Rica temperature field",
+            #     "description": "Diagnostic to compute Costa Rica temperature field",
+            #     "variables": {"tas": {"preprocessor": "general", "mip": "Amon"}},
+            #     "scripts": {
+            #         "cr_temp_field": {
+            #             "script": os.path.join(rootdir, "diag_scripts/diag_indices.py"),
+            #             "index": "cr_temp_field"
+            #         }
+            #     }
+            # }
         }
     }
     return diagnostics_dict
