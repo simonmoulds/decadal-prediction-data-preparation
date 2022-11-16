@@ -281,72 +281,72 @@ def get_s20_grid_diagnostic(rootdir):
 def get_s20_diagnostic(rootdir):
     diagnostics_dict = {
         "diagnostics": {
-            # "nao": {
-            #     "title": "NAO diagnostic",
-            #     "description": "Diagnostic to compute the NAO index",
-            #     "variables": {"psl": {"preprocessor": "general", "mip": "Amon"}},
-            #     "scripts": {
-            #         "nao": {
-            #             "script": os.path.join(rootdir, "diag_scripts/diag_indices.py"),
-            #             "index": "nao",
-            #         }
-            #     },
-            # },
-            # "ea": {
-            #     "title": "EA diagnostic",
-            #     "description": "Diagnostic to compute the EA index",
-            #     "variables": {"psl": {"preprocessor": "general", "mip": "Amon"}},
-            #     "scripts": {
-            #         "ea": {
-            #             "script": os.path.join(rootdir, "diag_scripts/diag_indices.py"),
-            #             "index": "ea",
-            #         }
-            #     },
-            # },
-            # "amv": {
-            #     "title": "AMV diagnostic",
-            #     "description": "Diagnostic to compute the AMV index",
-            #     "variables": {"tas": {"preprocessor": "general", "mip": "Amon"}},
-            #     "scripts": {
-            #         "amv": {
-            #             "script": os.path.join(rootdir, "diag_scripts/diag_indices.py"),
-            #             "index": "amv",
-            #         }
-            #     },
-            # },
-            # "european_precip": {
-            #     "title": "European precipitation diagnostic",
-            #     "description": "Diagnostic to compute mean European precipitation",
-            #     "variables": {"pr": {"preprocessor": "general", "mip": "Amon"}},
-            #     "scripts": {
-            #         "european_precip": {
-            #             "script": os.path.join(rootdir, "diag_scripts/diag_indices.py"),
-            #             "index": "european_precip",
-            #         }
-            #     },
-            # },
-            # "uk_precip": {
-            #     "title": "UK precipitation diagnostic",
-            #     "description": "Diagnostic to compute mean UK precipitation",
-            #     "variables": {"pr": {"preprocessor": "general", "mip": "Amon"}},
-            #     "scripts": {
-            #         "uk_precip": {
-            #             "script": os.path.join(rootdir, "diag_scripts/diag_indices.py"),
-            #             "index": "uk_precip",
-            #         }
-            #     },
-            # },
-            # "uk_temp": {
-            #     "title": "UK temperature diagnostic",
-            #     "description": "Diagnostic to compute mean UK temperature",
-            #     "variables": {"tas": {"preprocessor": "general", "mip": "Amon"}},
-            #     "scripts": {
-            #         "uk_temp": {
-            #             "script": os.path.join(rootdir, "diag_scripts/diag_indices.py"),
-            #             "index": "uk_temp",
-            #         }
-            #     },
-            # },
+            "nao": {
+                "title": "NAO diagnostic",
+                "description": "Diagnostic to compute the NAO index",
+                "variables": {"psl": {"preprocessor": "general", "mip": "Amon"}},
+                "scripts": {
+                    "nao": {
+                        "script": os.path.join(rootdir, "diag_scripts/diag_indices.py"),
+                        "index": "nao",
+                    }
+                },
+            },
+            "ea": {
+                "title": "EA diagnostic",
+                "description": "Diagnostic to compute the EA index",
+                "variables": {"psl": {"preprocessor": "general", "mip": "Amon"}},
+                "scripts": {
+                    "ea": {
+                        "script": os.path.join(rootdir, "diag_scripts/diag_indices.py"),
+                        "index": "ea",
+                    }
+                },
+            },
+            "amv": {
+                "title": "AMV diagnostic",
+                "description": "Diagnostic to compute the AMV index",
+                "variables": {"tas": {"preprocessor": "general", "mip": "Amon"}},
+                "scripts": {
+                    "amv": {
+                        "script": os.path.join(rootdir, "diag_scripts/diag_indices.py"),
+                        "index": "amv",
+                    }
+                },
+            },
+            "european_precip": {
+                "title": "European precipitation diagnostic",
+                "description": "Diagnostic to compute mean European precipitation",
+                "variables": {"pr": {"preprocessor": "general", "mip": "Amon"}},
+                "scripts": {
+                    "european_precip": {
+                        "script": os.path.join(rootdir, "diag_scripts/diag_indices.py"),
+                        "index": "european_precip",
+                    }
+                },
+            },
+            "uk_precip": {
+                "title": "UK precipitation diagnostic",
+                "description": "Diagnostic to compute mean UK precipitation",
+                "variables": {"pr": {"preprocessor": "general", "mip": "Amon"}},
+                "scripts": {
+                    "uk_precip": {
+                        "script": os.path.join(rootdir, "diag_scripts/diag_indices.py"),
+                        "index": "uk_precip",
+                    }
+                },
+            },
+            "uk_temp": {
+                "title": "UK temperature diagnostic",
+                "description": "Diagnostic to compute mean UK temperature",
+                "variables": {"tas": {"preprocessor": "general", "mip": "Amon"}},
+                "scripts": {
+                    "uk_temp": {
+                        "script": os.path.join(rootdir, "diag_scripts/diag_indices.py"),
+                        "index": "uk_temp",
+                    }
+                },
+            },
             # "nino1": {
             #     "title": "Nino 1 diagnostic",
             #     "description": "Diagnostic to compute Nino 1 index",
