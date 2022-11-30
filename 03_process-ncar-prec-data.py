@@ -1,13 +1,8 @@
 #!/usr/bin/env python3
 
 import os
-import shutil
 import glob
-import re
-import datetime
-import pandas as pd
 import numpy as np
-import netCDF4
 import iris
 import iris.pandas
 import iris.coord_categorisation
@@ -15,8 +10,6 @@ import xarray
 import yaml
 import click
 
-from functools import reduce
-from calendar import monthrange
 from tqdm import tqdm
 
 VALID_Y_NAMES = ["latitude", "lat"]
@@ -267,7 +260,7 @@ def main(config):
     init_years = [i for i in range(1960, 2015)]
     members = [i for i in range(1, 41)]
     variables = ["PRECC", "PRECL"]
-    for i in range(len(init_years)):
+    for i in tqdm(range(len(init_years))):
         init_year = init_years[i]
         for j in range(len(members)):
             member = members[j]
