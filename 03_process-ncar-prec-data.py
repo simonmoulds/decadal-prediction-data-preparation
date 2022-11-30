@@ -116,7 +116,8 @@ def _extract_field(x, xmin, xmax, ymin, ymax):
 
 
 def _extract_uk_precip_field(x):
-    uk_precip_field = _extract_field(x, -8, 2, 50, 59)
+    # uk_precip_field = _extract_field(x, -8, 2, 50, 59)
+    uk_precip_field = _extract_field(x, -10, 2, 50, 60)
     return uk_precip_field
 
 
