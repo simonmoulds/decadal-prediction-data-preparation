@@ -252,7 +252,7 @@ def main(config):
     )
     uk_precip_field_outdir = os.path.join(
         output_dir,
-        "recipe2/work/uk_precip_field"
+        "recipe1/work/uk_precip_field/uk_precip_field"
     )
     os.makedirs(european_precip_outdir, exist_ok=True)
     os.makedirs(uk_precip_outdir, exist_ok=True)
