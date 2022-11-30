@@ -116,31 +116,42 @@ def _extract_uk_precip_ts(x):
     return uk_prec
 
 
-def _extract_index(ds, index_name, column_name=None):
-    if index_name == "european_precip":
-        ds_index = _extract_european_precip_ts(ds)
-    elif index_name == "uk_precip":
-        ds_index = _extract_uk_precip_ts(ds)
-    else:
-        raise "Index not yet implemented"
+def _extract_field(x, xmin, xmax, ymin, ymax):
+    x_copy = x.copy()
+    subset = x_copy.intersection(longitude=(xmin, xmax), latitude=(ymin, ymax))
+    return subset
 
-    if column_name is None:
-        column_name = index_name
 
-    # Convert to data frame
-    df = iris.pandas.as_data_frame(ds_index)
-    df = df.rename(columns={0: column_name})
-    df.index.name = "time"
-    df = df.reset_index(level="time")
-    tm = df["time"].values
-    df["year"] = [tm.year for tm in tm]
-    df["month"] = [tm.month for tm in tm]
-    df = df.drop("time", axis=1)
-    # Check for any duplicated values which we have to remove
-    _, idx = np.unique(tm, return_index=True)
-    df = df.iloc[idx]
-    df.reset_index()
-    return df
+def _extract_uk_precip_field(x):
+    uk_precip_field = _extract_field(x, -8, 2, 50, 59)
+    return uk_precip_field
+
+
+# def _extract_index(ds, index_name, column_name=None):
+#     if index_name == "european_precip":
+#         ds_index = _extract_european_precip_ts(ds)
+#     elif index_name == "uk_precip":
+#         ds_index = _extract_uk_precip_ts(ds)
+#     else:
+#         raise "Index not yet implemented"
+
+#     if column_name is None:
+#         column_name = index_name
+
+#     # Convert to data frame
+#     df = iris.pandas.as_data_frame(ds_index)
+#     df = df.rename(columns={0: column_name})
+#     df.index.name = "time"
+#     df = df.reset_index(level="time")
+#     tm = df["time"].values
+#     df["year"] = [tm.year for tm in tm]
+#     df["month"] = [tm.month for tm in tm]
+#     df = df.drop("time", axis=1)
+#     # Check for any duplicated values which we have to remove
+#     _, idx = np.unique(tm, return_index=True)
+#     df = df.iloc[idx]
+#     df.reset_index()
+#     return df
 
 
 def _get_filename(path, init_year, member, variable):
@@ -227,43 +238,42 @@ def main(config):
     with open(config, "r") as f:
         config = yaml.load(f, Loader=yaml.FullLoader)
 
+    ncar_path = config["aux_data"]["ncar_precip"]
+    output_dir = ncar_path
+
     # Regrid using HadSLP data as target
     hadslp2r_filename = os.path.join(
         config["observed_data"]["hadslp2r"], "slp.mnmean.real.nc"
     )
     target = iris.load_cube(hadslp2r_filename, "slp")
 
-    ncar_path = config["aux_data"]["ncar_precip"]
-    output_dir = ncar_path
+    # Create output directories
     european_precip_outdir = os.path.join(
-        output_dir, "recipe1/work/european_precip/european_precip"
+        output_dir,
+        "recipe1/work/european_precip/european_precip"
     )
-    uk_precip_outdir = os.path.join(output_dir, "recipe1/work/uk_precip/uk_precip")
-    precip_field_outdir = os.path.join(output_dir, "recipe2/work/pr_field/pr_field")
-    try:
-        os.makedirs(european_precip_outdir)
-    except FileExistsError:
-        pass
-    try:
-        os.makedirs(uk_precip_outdir)
-    except FileExistsError:
-        pass
-    try:
-        os.makedirs(precip_field_outdir)
-    except FileExistsError:
-        pass
+    uk_precip_outdir = os.path.join(
+        output_dir,
+        "recipe1/work/uk_precip/uk_precip"
+    )
+    uk_precip_field_outdir = os.path.join(
+        output_dir,
+        "recipe2/work/uk_precip_field"
+    )
+    os.makedirs(european_precip_outdir, exist_ok=True)
+    os.makedirs(uk_precip_outdir, exist_ok=True)
+    os.makedirs(uk_precip_field_outdir, exist_ok=True)
 
-    init_years = [i for i in range(1960, 2006)]
+    init_years = [i for i in range(1960, 2015)]
     members = [i for i in range(1, 41)]
     variables = ["PRECC", "PRECL"]
     for i in range(len(init_years)):
         init_year = init_years[i]
-        print(init_year)
         for j in range(len(members)):
             member = members[j]
             european_precip_dict = {}
             uk_precip_dict = {}
-            # precip_field_dict = {}
+            uk_precip_field_dict = {}
 
             for k in range(len(variables)):
                 variable = variables[k]
@@ -271,51 +281,59 @@ def main(config):
                 # source_fn = 'data-raw/ncar_prec_data/b.e11.BDP.f09_g16.1983-11.001.cam.h0.PRECC.198311-199312.nc'
                 xr_source = xarray.open_dataset(source_fn)[variable]
                 source = xr_source.to_iris()
-                # source = iris.load_cube(source_fn)
                 ds = _regrid_cube(source, target)
                 iris.coord_categorisation.add_season(
-                    ds, "time", seasons=["djfm", "am", "jjas", "on"]
+                    # ds, "time", seasons=["djfm", "am", "jjas", "on"]
+                    ds, "time", seasons=["sondjfm", "amjja"]
                 )
                 iris.coord_categorisation.add_season_year(
-                    ds, "time", seasons=["djfm", "am", "jjas", "on"]
+                    # ds, "time", seasons=["djfm", "am", "jjas", "on"]
+                    ds, "time", seasons=["sondjfm", "amjja"]
                 )
-                ds = ds.extract(iris.Constraint(season="djfm"))
+                ds = ds.extract(iris.Constraint(season="sondjfm"))
 
                 # European precip
                 european_precip = _extract_european_precip_ts(ds)
                 european_precip = xarray.DataArray.from_iris(european_precip)
                 european_precip.name = "european_precip"
+                european_precip_dict[variable] = european_precip
 
                 # UK precip
                 uk_precip = _extract_uk_precip_ts(ds)
                 uk_precip = xarray.DataArray.from_iris(uk_precip)
                 uk_precip.name = "uk_precip"
-
-                # # Fields
-                # precip_field = _compute_djfm(ds, init_year)
-
-                european_precip_dict[variable] = european_precip
                 uk_precip_dict[variable] = uk_precip
-                # precip_field_dict[variable] = precip_field
+
+                # UK precip field
+                uk_precip_field = _extract_uk_precip_field(ds)
+                uk_precip_field = xarray.DataArray.from_iris(uk_precip_field)
+                uk_precip_field.name = "uk_precip_field"
+                uk_precip_field_dict[variable] = uk_precip_field
 
             european_precip = (
                 european_precip_dict["PRECC"] + european_precip_dict["PRECL"]
             )
-            uk_precip = uk_precip_dict["PRECC"] + uk_precip_dict["PRECL"]
-            # precip_field = precip_field_dict['PRECC'] + precip_field_dict['PRECL']
+            uk_precip = (
+                uk_precip_dict["PRECC"] + uk_precip_dict["PRECL"]
+            )
+            uk_precip_field = (
+                uk_precip_field_dict['PRECC'] + uk_precip_field_dict['PRECL']
+            )
 
             # Convert m/s to mm/s
             european_precip *= 1000.0
             uk_precip *= 1000.0
+            uk_precip_field *= 1000.0
 
             fn = _get_output_filename(init_year, member)
             european_precip.to_netcdf(os.path.join(european_precip_outdir, fn))
             uk_precip.to_netcdf(os.path.join(uk_precip_outdir, fn))
-            # precip_field.to_netcdf(os.path.join(precip_field_outdir, fn))
+            uk_precip_field.to_netcdf(os.path.join(uk_precip_field_outdir, fn))
 
 
 if __name__ == "__main__":
     main()
+
 
 # # TESTING:
 # config = "test-config.yml"

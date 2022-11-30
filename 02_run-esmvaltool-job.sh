@@ -18,8 +18,12 @@ source activate $DATA/envs/esmvaltool
 # PYTHONPATH sometimes causes issues
 export PYTHONPATH=
 
-esmvaltool run --skip-nonexistent=True --check_level=relaxed --offline=True ~/decadal-prediction-data-preparation/esmvaltool-recipes/recipe_s20_cmip5_autogen.yml
-esmvaltool run --skip-nonexistent=True --check_level=relaxed --offline=True ~/decadal-prediction-data-preparation/esmvaltool-recipes/recipe_s20_cmip6_autogen.yml
+WORKDIR=/home/cenv0857/decadal-prediction-data-preparation
+
+# esmvaltool run --skip-nonexistent=True --check_level=relaxed --offline=True $WORKDIR/esmvaltool-recipes/recipe_s20_cmip5_autogen.yml
+# esmvaltool run --skip-nonexistent=True --check_level=relaxed --offline=True $WORKDIR/esmvaltool-recipes/recipe_s20_cmip6_autogen.yml
+
+python $WORKDIR/03_process-ncar-prec-data.py --config $WORKDIR/arc-config.yml
 
 # esmvaltool run --skip-nonexistent=True --check_level=relaxed --offline=True ~/decadal-flood-prediction/esmvaltool-recipes/recipe_cvdp_cmip5_autogen.yml
 
