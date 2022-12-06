@@ -121,6 +121,9 @@ def _extract_uk_precip_field(x):
     return uk_precip_field
 
 
+def _extract_precip_field(x):
+    return x
+
 # def _extract_index(ds, index_name, column_name=None):
 #     if index_name == "european_precip":
 #         ds_index = _extract_european_precip_ts(ds)
@@ -146,7 +149,6 @@ def _extract_uk_precip_field(x):
 #     df = df.iloc[idx]
 #     df.reset_index()
 #     return df
-
 
 def _get_filename(path, init_year, member, variable):
     ptn = (
@@ -250,13 +252,18 @@ def main(config):
         output_dir,
         "recipe1/work/uk_precip/uk_precip"
     )
-    uk_precip_field_outdir = os.path.join(
+    # uk_precip_field_outdir = os.path.join(
+    #     output_dir,
+    #     "recipe1/work/uk_precip_field/uk_precip_field"
+    # )
+    precip_field_outdir = os.path.join(
         output_dir,
-        "recipe1/work/uk_precip_field/uk_precip_field"
+        "recipe1/work/precip_field/precip_field"
     )
     os.makedirs(european_precip_outdir, exist_ok=True)
     os.makedirs(uk_precip_outdir, exist_ok=True)
-    os.makedirs(uk_precip_field_outdir, exist_ok=True)
+    os.makedirs(precip_field_outdir, exist_ok=True)
+    # os.makedirs(uk_precip_field_outdir, exist_ok=True)
 
     init_years = [i for i in range(1960, 2015)]
     members = [i for i in range(1, 41)]
@@ -267,7 +274,8 @@ def main(config):
             member = members[j]
             european_precip_dict = {}
             uk_precip_dict = {}
-            uk_precip_field_dict = {}
+            # uk_precip_field_dict = {}
+            precip_field_dict = {}
 
             for k in range(len(variables)):
                 variable = variables[k]
@@ -298,11 +306,17 @@ def main(config):
                 uk_precip.name = "uk_precip"
                 uk_precip_dict[variable] = uk_precip
 
-                # UK precip field
-                uk_precip_field = _extract_uk_precip_field(ds)
-                uk_precip_field = xarray.DataArray.from_iris(uk_precip_field)
-                uk_precip_field.name = "uk_precip_field"
-                uk_precip_field_dict[variable] = uk_precip_field
+                # # UK precip field
+                # uk_precip_field = _extract_uk_precip_field(ds)
+                # uk_precip_field = xarray.DataArray.from_iris(uk_precip_field)
+                # uk_precip_field.name = "uk_precip_field"
+                # uk_precip_field_dict[variable] = uk_precip_field
+
+                # Global precip field
+                precip_field = _extract_precip_field(ds)
+                precip_field = xarray.DataArray.from_iris(precip_field)
+                precip_field.name = "precip_field"
+                precip_field_dict[variable] = precip_field
 
             european_precip = (
                 european_precip_dict["PRECC"] + european_precip_dict["PRECL"]
@@ -310,8 +324,11 @@ def main(config):
             uk_precip = (
                 uk_precip_dict["PRECC"] + uk_precip_dict["PRECL"]
             )
-            uk_precip_field = (
-                uk_precip_field_dict['PRECC'] + uk_precip_field_dict['PRECL']
+            # uk_precip_field = (
+            #     uk_precip_field_dict['PRECC'] + uk_precip_field_dict['PRECL']
+            # )
+            precip_field = (
+                precip_field_dict['PRECC'] + precip_field_dict['PRECL']
             )
 
             # Convert m/s to mm/s
@@ -322,7 +339,8 @@ def main(config):
             fn = _get_output_filename(init_year, member)
             european_precip.to_netcdf(os.path.join(european_precip_outdir, fn))
             uk_precip.to_netcdf(os.path.join(uk_precip_outdir, fn))
-            uk_precip_field.to_netcdf(os.path.join(uk_precip_field_outdir, fn))
+            precip_field.to_netcdf(os.path.join(precip_field_outdir, fn))
+            # uk_precip_field.to_netcdf(os.path.join(uk_precip_field_outdir, fn))
 
 
 if __name__ == "__main__":

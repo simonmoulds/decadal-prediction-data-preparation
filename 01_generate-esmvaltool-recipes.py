@@ -457,14 +457,25 @@ def get_s20_diagnostic(rootdir):
             #         }
             #     }
             # },
-            "uk_precip_field": {
-                "title": "UK precipitation field",
-                "description": "Diagnostic to compute UK precipitation field",
+            "precip_field": {
+                "title": "Global precipitation field",
+                "description": "Diagnostic to compute global precipitation field",
                 "variables": {"pr": {"preprocessor": "general", "mip": "Amon"}},
                 "scripts": {
-                    "uk_precip_field": {
+                    "precip_field": {
                         "script": os.path.join(rootdir, "diag_scripts/diag_indices.py"),
-                        "index": "uk_precip_field"
+                        "index": "precip_field"
+                    }
+                }
+            },
+            "temp_field": {
+                "title": "Global temperature field",
+                "description": "Diagnostic to compute global temperature field",
+                "variables": {"pr": {"preprocessor": "general", "mip": "Amon"}},
+                "scripts": {
+                    "temp_field": {
+                        "script": os.path.join(rootdir, "diag_scripts/diag_indices.py"),
+                        "index": "temp_field"
                     }
                 }
             }#,

@@ -357,6 +357,13 @@ def _extract_uk_precip_field(x):
     return uk_precip_field
 
 
+def _extract_precip_field(x):
+    return x
+
+
+def _extract_temp_field(x):
+    return x
+
 def _extract_cr_precip_field(x):
     cr_precip_field = _extract_field(x, -86, -82, 8, 12)
     return cr_precip_field
