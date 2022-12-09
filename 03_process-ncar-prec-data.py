@@ -334,7 +334,8 @@ def main(config):
             # Convert m/s to mm/s
             european_precip *= 1000.0
             uk_precip *= 1000.0
-            uk_precip_field *= 1000.0
+            # uk_precip_field *= 1000.0
+            precip_field *= 1000.0
 
             fn = _get_output_filename(init_year, member)
             european_precip.to_netcdf(os.path.join(european_precip_outdir, fn))
