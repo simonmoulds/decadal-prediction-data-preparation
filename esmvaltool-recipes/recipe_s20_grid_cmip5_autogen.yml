@@ -271,8 +271,6 @@ preprocessors:
         end_latitude: -90
         step_latitude: -5
       scheme: linear
-    extract_season:
-      season: sondjfm
 
 diagnostics:
   psl_field:

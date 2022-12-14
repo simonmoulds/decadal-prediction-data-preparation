@@ -184,9 +184,9 @@ def get_s20_preprocessor():
                         "step_latitude": -5,
                     },
                     "scheme": "linear",
-                },
+                }#,
                 # "extract_season": {"season": "djfm"},
-                "extract_season": {"season": "sondjfm"},
+                # "extract_season": {"season": "sondjfm"},
             }
         }
     }

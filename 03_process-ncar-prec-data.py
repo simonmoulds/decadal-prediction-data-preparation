@@ -284,15 +284,15 @@ def main(config):
                 xr_source = xarray.open_dataset(source_fn)[variable]
                 source = xr_source.to_iris()
                 ds = _regrid_cube(source, target)
-                iris.coord_categorisation.add_season(
-                    # ds, "time", seasons=["djfm", "am", "jjas", "on"]
-                    ds, "time", seasons=["sondjfm", "amjja"]
-                )
-                iris.coord_categorisation.add_season_year(
-                    # ds, "time", seasons=["djfm", "am", "jjas", "on"]
-                    ds, "time", seasons=["sondjfm", "amjja"]
-                )
-                ds = ds.extract(iris.Constraint(season="sondjfm"))
+                # iris.coord_categorisation.add_season(
+                #     # ds, "time", seasons=["djfm", "am", "jjas", "on"]
+                #     ds, "time", seasons=["sondjfm", "amjja"]
+                # )
+                # iris.coord_categorisation.add_season_year(
+                #     # ds, "time", seasons=["djfm", "am", "jjas", "on"]
+                #     ds, "time", seasons=["sondjfm", "amjja"]
+                # )
+                # ds = ds.extract(iris.Constraint(season="sondjfm"))
 
                 # European precip
                 european_precip = _extract_european_precip_ts(ds)
